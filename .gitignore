@@ -2,3 +2,7 @@
 *.iml
 /.idea
 /bin
+/logs
+/.settings
+.project
+.classpath
