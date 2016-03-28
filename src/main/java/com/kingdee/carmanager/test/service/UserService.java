@@ -7,4 +7,5 @@ import com.kingdee.carmanager.test.bean.User;
  */
 public interface UserService {
     public User getUserById(int id);
+
 }
