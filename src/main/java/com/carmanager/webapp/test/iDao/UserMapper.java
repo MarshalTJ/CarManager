@@ -1,6 +1,6 @@
-package com.kingdee.carmanager.test.IDao;
+package com.carmanager.webapp.test.iDao;
 
-import com.kingdee.carmanager.test.bean.User;
+import com.carmanager.webapp.test.bean.User;
 
 public interface UserMapper {
     int deleteByPrimaryKey(Integer fid);

@@ -1,6 +1,6 @@
-package com.kingdee.carmanager.test.service;
+package com.carmanager.webapp.test.service;
 
-import com.kingdee.carmanager.test.bean.User;
+import com.carmanager.webapp.test.bean.User;
 
 /**
  * Created by Administrator on 2016/3/27.

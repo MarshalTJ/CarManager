@@ -1,11 +1,13 @@
-package com.kingdee.carmanager.test.service.impl;
+package com.carmanager.webapp.test.service.impl;
 
-import com.kingdee.carmanager.test.IDao.UserMapper;
-import com.kingdee.carmanager.test.bean.User;
-import com.kingdee.carmanager.test.service.UserService;
+import com.carmanager.webapp.test.bean.User;
+import com.carmanager.webapp.test.iDao.UserMapper;
+import com.carmanager.webapp.test.service.UserService;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.test.context.ContextConfiguration;
+
 import sun.applet.Main;
 
 import javax.annotation.Resource;
@@ -22,10 +24,6 @@ public class UserServiceImpl implements UserService {
     @Override
     public User getUserById(int id) {
         return this.mapper.selectByPrimaryKey(id);
-    }
-
-    public static void main(String[] args) {
-        System.out.println(new UserServiceImpl().getUserById(2).getFname());
     }
 
 }

@@ -1,7 +1,8 @@
-package com.kingdee.carmanager.test.controller;
+package com.carmanager.webapp.test.controller;
 
-import com.kingdee.carmanager.test.bean.User;
-import com.kingdee.carmanager.test.service.UserService;
+import com.carmanager.webapp.test.bean.User;
+import com.carmanager.webapp.test.service.UserService;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;

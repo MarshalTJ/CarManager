@@ -1,10 +1,8 @@
-package com.kingdee.carmanager.test.service.impl;
+package com.carmanager.webapp.test.service.impl;
 
 
-import com.kingdee.carmanager.test.IDao.UserMapper;
-import com.kingdee.carmanager.test.bean.User;
-import com.kingdee.carmanager.test.service.UserService;
 import junit.framework.TestCase;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,7 +12,8 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.transaction.TransactionConfiguration;
 import org.springframework.transaction.annotation.Transactional;
 
-import javax.annotation.Resource;
+import com.carmanager.webapp.test.iDao.UserMapper;
+import com.carmanager.webapp.test.service.UserService;
 
 @RunWith(SpringJUnit4ClassRunner.class)     //表示继承了SpringJUnit4ClassRunner类
 @ContextConfiguration(locations = {"classpath:spring-mybatis.xml"})
@@ -25,18 +24,13 @@ public class UserServiceImplTest extends TestCase {
     @Autowired
     private UserService service;
 
-    @Resource
+    @Autowired
     private UserMapper mapper;
 
 
     @Test
     @Rollback(true)
     public void testGetUserById() throws Exception {
-        User user = new User();
-        user.setFname("lixin");
-        user.setFage(15);
-        user.setFpassword("lixin");
-        mapper.insertSelective(user);
-        System.out.println(user.getFid());
+        System.out.println( service);
     }
 }

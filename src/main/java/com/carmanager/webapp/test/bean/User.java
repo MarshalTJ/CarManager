@@ -1,4 +1,4 @@
-package com.kingdee.carmanager.test.bean;
+package com.carmanager.webapp.test.bean;
 
 public class User {
     private Integer fid;
