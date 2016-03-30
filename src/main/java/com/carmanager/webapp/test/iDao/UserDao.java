@@ -2,7 +2,7 @@ package com.carmanager.webapp.test.iDao;
 
 import com.carmanager.webapp.test.bean.User;
 
-public interface UserMapper {
+public interface UserDao {
     int deleteByPrimaryKey(Integer fid);
 
     int insert(User record);
