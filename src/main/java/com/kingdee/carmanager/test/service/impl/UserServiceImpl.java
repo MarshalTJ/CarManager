@@ -20,7 +20,6 @@ public class UserServiceImpl implements UserService {
     private UserMapper mapper;
 
     @Override
-<<<<<<< HEAD
     public User getUserById(int id) {
         return this.mapper.selectByPrimaryKey(id);
     }
@@ -28,9 +27,5 @@ public class UserServiceImpl implements UserService {
     public static void main(String[] args) {
         System.out.println(new UserServiceImpl().getUserById(2).getFname());
     }
-=======
-	public User getUserById(int id) {
-		return this.mapper.selectByPrimaryKey(id);
-	}
->>>>>>> origin/master
+
 }
