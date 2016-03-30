@@ -1,4 +1,4 @@
-package com.carmanager.webapp.test.iDao;
+package com.carmanager.webapp.test.dao;
 
 import com.carmanager.webapp.test.bean.User;
 

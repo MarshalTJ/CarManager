@@ -1,7 +1,7 @@
 package com.carmanager.webapp.test.service.impl;
 
 import com.carmanager.webapp.test.bean.User;
-import com.carmanager.webapp.test.iDao.UserDao;
+import com.carmanager.webapp.test.dao.UserDao;
 import com.carmanager.webapp.test.service.UserService;
 
 import org.springframework.beans.factory.annotation.Autowired;

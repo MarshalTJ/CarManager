@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.carmanager.webapp.test.iDao.UserDao" >
+<mapper namespace="com.carmanager.webapp.test.dao.UserDao" >
   <resultMap id="BaseResultMap" type="com.carmanager.webapp.test.bean.User" >
     <id column="fid" property="fid" jdbcType="INTEGER" />
     <result column="fname" property="fname" jdbcType="VARCHAR" />
