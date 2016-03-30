@@ -24,13 +24,9 @@ public class UserServiceImplTest extends TestCase {
     @Autowired
     private UserService service;
 
-    @Autowired
-    private UserMapper mapper;
-
-
     @Test
     @Rollback(true)
     public void testGetUserById() throws Exception {
-        System.out.println( service);
+        System.out.println( service.getUserById(1) + "---------");
     }
 }
