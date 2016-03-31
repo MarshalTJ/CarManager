@@ -177,22 +177,7 @@
             <artifactId>guava</artifactId>
             <version>19.0</version>
         </dependency>
-
-        <!-- 数据库操作需要包  start-->
-        <!-- google bonecp包 配合dbutils操作数据库-->
-        <dependency>
-            <groupId>com.jolbox</groupId>
-            <artifactId>bonecp</artifactId>
-            <version>0.8.0.RELEASE</version>
-        </dependency>
-        <dependency>
-            <groupId>com.google.collections</groupId>
-            <artifactId>google-collections</artifactId>
-            <version>1.0</version>
-        </dependency>
-        <!-- end -->
-
-
+        
     </dependencies>
 	<build>
 		<finalName>CarManager</finalName>
