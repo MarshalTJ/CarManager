@@ -1,4 +1,4 @@
-注意须知:
+注意须知:<br>
 1.包名:命名以com.carmanager.webapp始,最后名(bean,controller,iDao,mapping,service,service.impl),方便spring
     查找,避免各自配置过多,原则上spring-mybatis.xml尽量少修改<br>
 2.iDao与mapping包下内容统一用mybatis-generator生成,iDao层统一以Dao命名结尾,同理 service以及serviceImpl命名相同<br>
