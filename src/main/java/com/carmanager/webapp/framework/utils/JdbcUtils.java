@@ -1,4 +1,4 @@
-package com.kingdee.carmanager.framework.utils;
+package com.carmanager.webapp.framework.utils;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -117,7 +117,7 @@ public class JdbcUtils {
     	cleanup(null, null);
     }
     
-    /**  以下是事物的一些操作**/
+    /**  以下是事物的�?些操�?**/
 
     public static void beginTrasaction() {
         try {
