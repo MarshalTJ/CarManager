@@ -23,21 +23,15 @@ public class UserController {
 	
 	private static final Logger logger = Logger.getLogger(UserController.class.getSimpleName()); 
 	
-    @Resource
-    UserService service;
-
-    @RequestMapping("/showUser")
-	public String toIndex(HttpServletRequest request,
-			@RequestParam(value = "error", required = false) boolean error,
-			ModelMap model) {
-    	logger.debug("Received request to show login page");  
-    	
-    	if(error == true){
-    		model.put("error", "You have entered an invalid username or password!");
-    	}else{
-    		model.put("error", "");
-    	}
-    	
-    	return "loginpage";
+    @RequestMapping("/common")
+	public String toCommonPage(HttpServletRequest request, ModelMap model) {
+    	logger.debug("Received request to show common page");  
+    	return "commonpage";
 	}
+    
+    @RequestMapping("/admin")
+    public String toAdminPage(HttpServletRequest request, ModelMap model){
+    	logger.debug("Received request to show admin page");
+    	return "adminpage";
+    }
 }

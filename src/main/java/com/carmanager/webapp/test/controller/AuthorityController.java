@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 
 @Controller("AuthorityController")
-@RequestMapping("authority")
+@RequestMapping("/authority")
 public class AuthorityController {
 	
 	private static final Logger logger = Logger.getLogger(AuthorityController.class.getSimpleName());
