@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.carmanager.webapp.wechat.dao.WeixinDao" >
-  
+  <select id="findWeixinInfoByAppid" parameterType="map" resultType="com.carmanager.webapp.wechat.bean.WeixinInfo">
+  select * from t_bd_weixininfo where 
+  <if test="fappid!=null">fappid=#{fappid}</if>
+  <if test="fid!=null">fid=#{fid}</if>
+  <if test="fghid!=null">fghid=#{fghid}</if>
+  <if test="fcompanyid!=null">fcompanyid=#{fcompanyid}</if>
+  </select>
 </mapper>
