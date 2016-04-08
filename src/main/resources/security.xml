@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:security="http://www.springframework.org/schema/security"
+	xmlns:oauth="http://www.springframework.org/schema/security/oauth2"
+	xsi:schemaLocation="http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-4.1.xsd
+		http://www.springframework.org/schema/security/oauth2 http://www.springframework.org/schema/security/spring-security-oauth2-2.0.xsd
+		http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-3.2.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.1.xsd
+		">
+    <security:http  pattern="/index.jsp" security="none"/>
+     <security:http  pattern="/js/**" security="none"/>
+      <security:http  pattern="/css/**" security="none"/>
+	<security:http auto-config="true">
+	    <security:form-login login-page="/index.jsp"  default-target-url="/security/login"/>
+	    <security:remember-me/>
+		<security:intercept-url pattern="/**" access="ROLE_USER" />
+	</security:http>
+
+	<security:authentication-manager>
+		<security:authentication-provider>
+			<security:jdbc-user-service data-source-ref="dataSource" 
+			authorities-by-username-query="select t2.fusername, t3.fauthority from t_security_authorities t1,t_security_users t2,t_security_roles t3 
+			where t1.fuserid = t2.fid and t1.froleid = t3.fid and t2.fusername = ?" 
+			users-by-username-query="select fusername,fpassword,fenabled from t_security_users where fusername = ?"/>
+		</security:authentication-provider>
+	</security:authentication-manager>
+
+
+	
+</beans>
