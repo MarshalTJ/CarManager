@@ -117,7 +117,7 @@ public class JdbcUtils {
     	cleanup(null, null);
     }
     
-    /**  以下是事物的�?些操�?**/
+    /**  以下是事物的一些简单的操作 **/
 
     public static void beginTrasaction() {
         try {
