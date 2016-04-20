@@ -5,5 +5,5 @@ import java.util.Map;
 import com.carmanager.webapp.wechat.bean.WeixinInfo;
 
 public interface WeixinDao {
-	WeixinInfo findWeixinInfoByAppid(Map<String,String> paraMap);
+	WeixinInfo findWeixinInfoByAppid(Map<String,Object> paraMap);
 }

@@ -11,29 +11,29 @@ import lombok.NoArgsConstructor;
 public class WeixinInfo implements Serializable{
 
 	/**
-	 * 微信信息表
+	 * 寰俊淇℃伅琛�
 	 */
 	private static final long serialVersionUID = 1L;
 	
 	private Long fid;
 	
-	private String fname;//公众号名称
+	private String fname;//鍏紬鍙峰悕绉�
 	
 	private String fappid;//
 	
 	private String fappsecret;
 	
-	private String ftoken;//加解密token
+	private String ftoken;//鍔犺В瀵唗oken
 	
-	private String fencodingaeskey;//消息加解密key
+	private String fencodingaeskey;//娑堟伅鍔犺В瀵唊ey
 	
-	private String fghid;//公众号原始id
+	private String fghid;//鍏紬鍙峰師濮媔d
 	
-	private String fcertpath;  //证书路径
+	private String fcertpath;  //璇佷功璺緞
 	
-	private String fcertkey;//支付API密码
+	private String fcertkey;//鏀粯API瀵嗙爜
 	
-	private Long fcompanyid;//对应企业id
+	private Long fshopid;//瀵瑰簲浼佷笟id
 	
 
 }

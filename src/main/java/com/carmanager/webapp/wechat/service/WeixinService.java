@@ -1,10 +1,11 @@
 package com.carmanager.webapp.wechat.service;
 
-import java.util.Map;
-
+import com.alibaba.fastjson.JSONObject;
 import com.carmanager.webapp.wechat.bean.WeixinInfo;
 
 public interface WeixinService {
-	public WeixinInfo findWeixinInfoByAppid(Map<String,String> paraMap);
+	public WeixinInfo findWeixinInfoByAppid(String fappid,String fghid,Long fid,Long fshopid);
+	
+	public JSONObject getOpenidByCode(String code,String appid,String secret);
 
 }

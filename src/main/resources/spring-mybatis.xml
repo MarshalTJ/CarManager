@@ -13,7 +13,7 @@
                         http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd">
     <!-- 自动扫描 -->
     <!-- 自动注解一些-->
-    <context:component-scan base-package="com.carmanager.**.service.impl"/>
+    <context:component-scan base-package="com.carmanager"/>
 
     <!-- 引入配置文件 -->
     <bean id="propertyConfigurer"
@@ -72,6 +72,6 @@
     </bean> 
 	
     
-    <import resource="classpath:spring-security.xml"/>
+  
 
 </beans>

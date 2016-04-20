@@ -4,7 +4,7 @@
   <context-param>
     <param-name>contextConfigLocation</param-name>
     <param-value>
-    	classpath:spring-mybatis.xml,classpath:spring-security.xml
+    	classpath:spring-mybatis.xml
 	</param-value>
   </context-param>
   
@@ -25,14 +25,14 @@
   
   
   <!-- spring security 必须声明的过滤器 -->
-  <filter>
+  <!-- <filter>
   	<filter-name>SpringSecurityFilter</filter-name>
   	<filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
   </filter>
   <filter-mapping>
   	<filter-name>SpringSecurityFilter</filter-name>
   	<url-pattern>/*</url-pattern>
-  </filter-mapping>
+  </filter-mapping> -->
   
   <listener>
     <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>

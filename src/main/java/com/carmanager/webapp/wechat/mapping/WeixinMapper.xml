@@ -4,8 +4,8 @@
   <select id="findWeixinInfoByAppid" parameterType="map" resultType="com.carmanager.webapp.wechat.bean.WeixinInfo">
   select * from t_bd_weixininfo where 
   <if test="fappid!=null">fappid=#{fappid}</if>
-  <if test="fid!=null">fid=#{fid}</if>
-  <if test="fghid!=null">fghid=#{fghid}</if>
-  <if test="fcompanyid!=null">fcompanyid=#{fcompanyid}</if>
+  <if test="fid!=null">and fid=#{fid}</if>
+  <if test="fghid!=null">and fghid=#{fghid}</if>
+  <if test="fshopid!=null">and fshopid=#{fshopid}</if>
   </select>
 </mapper>
