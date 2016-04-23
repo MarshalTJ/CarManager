@@ -1,23 +1,79 @@
 /*==============================================================*/
 /* DBMS name:      MySQL 5.0                                    */
-/* Created on:     2016/4/23 星期六 上午 11:10:16                    */
+/* Created on:     2016/4/23 星期六 上午 11:46:24                    */
 /*==============================================================*/
 
 
-drop table if exists fuser;
+drop table if exists t_pm_permitem;
 
-drop table if exists permitem;
+drop table if exists t_pm_role;
 
-drop table if exists role;
+drop table if exists t_pm_roleperm;
 
-drop table if exists roleperm;
+drop table if exists t_pm_user;
 
-drop table if exists userrole;
+drop table if exists t_pm_userrole;
 
 /*==============================================================*/
-/* Table: fuser                                                 */
+/* Table: t_pm_permitem                                         */
 /*==============================================================*/
-create table fuser
+create table t_pm_permitem
+(
+   fid                  varchar(50) not null comment 'uuid',
+   fname                varchar(100) not null comment '权限名称',
+   fnumber              varchar(50) not null comment '权限编码',
+   fui                  varchar(100) comment '对应UI',
+   falias               varchar(100) comment '别名',
+   flongnumber          varchar(200) comment '长编码',
+   fobjecttype          varchar(100) comment '对象类型',
+   ftype                int comment '类型',
+   fparentid            varchar(50) comment '父节点',
+   fisleaf              int comment '是否叶子',
+   foperationtype       int comment '操作类型',
+   fenabledatapermission int comment '是否支持数据权限',
+   fdescription         varchar(200) comment '描述',
+   primary key (fid)
+);
+
+alter table t_pm_permitem comment '权限项';
+
+/*==============================================================*/
+/* Table: t_pm_role                                             */
+/*==============================================================*/
+create table t_pm_role
+(
+   fid                  varchar(50) not null comment 'uuid',
+   fname                varchar(100) not null comment '角色名称',
+   fnumber              varchar(100) not null comment '角色编码',
+   fshopid              varchar(50) not null comment '所属店铺',
+   fdescription         varchar(200) comment '描述',
+   fcreator             varchar(50) comment '创建人',
+   fcreatetime          varchar(200) comment '创建时间',
+   flastupdateuser      varchar(50) comment '最后更新人',
+   flastupdatetime      varchar(200) comment '最后更新时间',
+   primary key (fid)
+);
+
+alter table t_pm_role comment '角色';
+
+/*==============================================================*/
+/* Table: t_pm_roleperm                                         */
+/*==============================================================*/
+create table t_pm_roleperm
+(
+   fid                  varchar(50) not null comment 'uuid',
+   froleid              varchar(50) not null comment '角色',
+   fpermid              varchar(50) not null comment '权限项',
+   fpermtype            int comment '权限类型',
+   frulestructure       varchar(500) comment '规则表达式',
+   fruleexpr            varchar(500) comment '规则条件',
+   primary key (fid)
+);
+
+/*==============================================================*/
+/* Table: t_pm_user                                             */
+/*==============================================================*/
+create table t_pm_user
 (
    fid                  varchar(50) not null comment 'uuid',
    fname                varchar(100) not null comment '用户名称',
@@ -47,68 +103,12 @@ create table fuser
    primary key (fid)
 );
 
-alter table fuser comment '用户表';
+alter table t_pm_user comment '用户表';
 
 /*==============================================================*/
-/* Table: permitem                                              */
+/* Table: t_pm_userrole                                         */
 /*==============================================================*/
-create table permitem
-(
-   fid                  varchar(50) not null comment 'uuid',
-   fname                varchar(100) not null comment '权限名称',
-   fnumber              varchar(50) not null comment '权限编码',
-   fui                  varchar(100) comment '对应UI',
-   falias               varchar(100) comment '别名',
-   flongnumber          varchar(200) comment '长编码',
-   fobjecttype          varchar(100) comment '对象类型',
-   ftype                int comment '类型',
-   fparentid            varchar(50) comment '父节点',
-   fisleaf              int comment '是否叶子',
-   foperationtype       int comment '操作类型',
-   fenabledatapermission int comment '是否支持数据权限',
-   fdescription         varchar(200) comment '描述',
-   primary key (fid)
-);
-
-alter table permitem comment '权限项';
-
-/*==============================================================*/
-/* Table: role                                                  */
-/*==============================================================*/
-create table role
-(
-   fid                  varchar(50) not null comment 'uuid',
-   fname                varchar(100) not null comment '角色名称',
-   fnumber              varchar(100) not null comment '角色编码',
-   fshopid              varchar(50) not null comment '所属店铺',
-   fdescription         varchar(200) comment '描述',
-   fcreator             varchar(50) comment '创建人',
-   fcreatetime          varchar(200) comment '创建时间',
-   flastupdateuser      varchar(50) comment '最后更新人',
-   flastupdatetime      varchar(200) comment '最后更新时间',
-   primary key (fid)
-);
-
-alter table role comment '角色';
-
-/*==============================================================*/
-/* Table: roleperm                                              */
-/*==============================================================*/
-create table roleperm
-(
-   fid                  varchar(50) not null comment 'uuid',
-   froleid              varchar(50) not null comment '角色',
-   fpermid              varchar(50) not null comment '权限项',
-   fpermtype            int comment '权限类型',
-   frulestructure       varchar(500) comment '规则表达式',
-   fruleexpr            varchar(500) comment '规则条件',
-   primary key (fid)
-);
-
-/*==============================================================*/
-/* Table: userrole                                              */
-/*==============================================================*/
-create table userrole
+create table t_pm_userrole
 (
    fid                  varchar(50) not null comment 'uuid',
    froleid              varchar(50) not null comment '角色',
