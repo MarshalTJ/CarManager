@@ -1,0 +1,541 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.carmanager.webapp.basedata.dao.AccountBankDao" >
+  <resultMap id="BaseResultMap" type="com.carmanager.webapp.basedata.bean.AccountBank" >
+    <id column="fid" property="id" jdbcType="CHAR" />
+    <result column="fname" property="name" jdbcType="CHAR" />
+    <result column="fnumber" property="number" jdbcType="CHAR" />
+    <result column="fbankaccount" property="bankaccount" jdbcType="CHAR" />
+    <result column="fshopid" property="shopid" jdbcType="CHAR" />
+    <result column="fisclosed" property="isclosed" jdbcType="CHAR" />
+    <result column="fopendate" property="opendate" jdbcType="CHAR" />
+    <result column="fclosedate" property="closedate" jdbcType="CHAR" />
+    <result column="fbank" property="bank" jdbcType="CHAR" />
+    <result column="fphonenumber" property="phonenumber" jdbcType="CHAR" />
+    <result column="fissetbankinterface" property="issetbankinterface" jdbcType="CHAR" />
+    <result column="fbanktype" property="banktype" jdbcType="CHAR" />
+    <result column="finneraccount" property="inneraccount" jdbcType="CHAR" />
+    <result column="fctrlstrategy" property="ctrlstrategy" jdbcType="CHAR" />
+    <result column="fclassification" property="classification" jdbcType="CHAR" />
+    <result column="fismotheraccount" property="ismotheraccount" jdbcType="CHAR" />
+    <result column="faccounttype" property="accounttype" jdbcType="CHAR" />
+    <result column="fnotoutpay" property="notoutpay" jdbcType="CHAR" />
+    <result column="fsubaccount" property="subaccount" jdbcType="CHAR" />
+    <result column="fisbank" property="isbank" jdbcType="CHAR" />
+    <result column="fiscash" property="iscash" jdbcType="CHAR" />
+    <result column="facctname" property="acctname" jdbcType="CHAR" />
+    <result column="frelemotheracct" property="relemotheracct" jdbcType="CHAR" />
+    <result column="fisdcpay" property="isdcpay" jdbcType="CHAR" />
+    <result column="fisreckoning" property="isreckoning" jdbcType="CHAR" />
+    <result column="fsimplecode" property="simplecode" jdbcType="CHAR" />
+    <result column="fagencyshop" property="agencyshop" jdbcType="CHAR" />
+    <result column="fmaxpayamount" property="maxpayamount" jdbcType="CHAR" />
+    <result column="fapplybillid" property="applybillid" jdbcType="CHAR" />
+    <result column="fbankversion" property="bankversion" jdbcType="CHAR" />
+    <result column="fbankcert" property="bankcert" jdbcType="CHAR" />
+    <result column="freference" property="reference" jdbcType="CHAR" />
+    <result column="fcountry" property="country" jdbcType="CHAR" />
+    <result column="fbankinterface" property="bankinterface" jdbcType="CHAR" />
+    <result column="fbankinterfaceid" property="bankinterfaceid" jdbcType="CHAR" />
+    <result column="fsyncstatus" property="syncstatus" jdbcType="CHAR" />
+    <result column="fsyncstatusmsg" property="syncstatusmsg" jdbcType="CHAR" />
+    <result column="fsharetype" property="sharetype" jdbcType="CHAR" />
+    <result column="fdescription" property="description" jdbcType="CHAR" />
+    <result column="fcreator" property="creator" jdbcType="CHAR" />
+    <result column="fcreatetime" property="createtime" jdbcType="CHAR" />
+    <result column="flastudpateuser" property="lastudpateuser" jdbcType="CHAR" />
+    <result column="flastupdatetime" property="lastupdatetime" jdbcType="CHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    fid, fname, fnumber, fbankaccount, fshopid, fisclosed, fopendate, fclosedate, fbank, 
+    fphonenumber, fissetbankinterface, fbanktype, finneraccount, fctrlstrategy, fclassification, 
+    fismotheraccount, faccounttype, fnotoutpay, fsubaccount, fisbank, fiscash, facctname, 
+    frelemotheracct, fisdcpay, fisreckoning, fsimplecode, fagencyshop, fmaxpayamount, 
+    fapplybillid, fbankversion, fbankcert, freference, fcountry, fbankinterface, fbankinterfaceid, 
+    fsyncstatus, fsyncstatusmsg, fsharetype, fdescription, fcreator, fcreatetime, flastudpateuser, 
+    flastupdatetime
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_bd_accountbank
+    where fid = #{id,jdbcType=CHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from t_bd_accountbank
+    where fid = #{id,jdbcType=CHAR}
+  </delete>
+  <insert id="insert" parameterType="com.carmanager.webapp.basedata.bean.AccountBank" >
+    insert into t_bd_accountbank (fid, fname, fnumber, fbankaccount, 
+      fshopid, fisclosed, fopendate, 
+      fclosedate, fbank, fphonenumber, 
+      fissetbankinterface, fbanktype, finneraccount, 
+      fctrlstrategy, fclassification, fismotheraccount, 
+      faccounttype, fnotoutpay, fsubaccount, 
+      fisbank, fiscash, facctname, frelemotheracct, 
+      fisdcpay, fisreckoning, fsimplecode, 
+      fagencyshop, fmaxpayamount, fapplybillid, 
+      fbankversion, fbankcert, freference, 
+      fcountry, fbankinterface, fbankinterfaceid, 
+      fsyncstatus, fsyncstatusmsg, fsharetype, 
+      fdescription, fcreator, fcreatetime, 
+      flastudpateuser, flastupdatetime)
+    values (#{id,jdbcType=CHAR}, #{name,jdbcType=CHAR}, #{number,jdbcType=CHAR}, #{bankaccount,jdbcType=CHAR}, 
+      #{shopid,jdbcType=CHAR}, #{isclosed,jdbcType=CHAR}, #{opendate,jdbcType=CHAR}, 
+      #{closedate,jdbcType=CHAR}, #{bank,jdbcType=CHAR}, #{phonenumber,jdbcType=CHAR}, 
+      #{issetbankinterface,jdbcType=CHAR}, #{banktype,jdbcType=CHAR}, #{inneraccount,jdbcType=CHAR}, 
+      #{ctrlstrategy,jdbcType=CHAR}, #{classification,jdbcType=CHAR}, #{ismotheraccount,jdbcType=CHAR}, 
+      #{accounttype,jdbcType=CHAR}, #{notoutpay,jdbcType=CHAR}, #{subaccount,jdbcType=CHAR}, 
+      #{isbank,jdbcType=CHAR}, #{iscash,jdbcType=CHAR}, #{acctname,jdbcType=CHAR}, #{relemotheracct,jdbcType=CHAR}, 
+      #{isdcpay,jdbcType=CHAR}, #{isreckoning,jdbcType=CHAR}, #{simplecode,jdbcType=CHAR}, 
+      #{agencyshop,jdbcType=CHAR}, #{maxpayamount,jdbcType=CHAR}, #{applybillid,jdbcType=CHAR}, 
+      #{bankversion,jdbcType=CHAR}, #{bankcert,jdbcType=CHAR}, #{reference,jdbcType=CHAR}, 
+      #{country,jdbcType=CHAR}, #{bankinterface,jdbcType=CHAR}, #{bankinterfaceid,jdbcType=CHAR}, 
+      #{syncstatus,jdbcType=CHAR}, #{syncstatusmsg,jdbcType=CHAR}, #{sharetype,jdbcType=CHAR}, 
+      #{description,jdbcType=CHAR}, #{creator,jdbcType=CHAR}, #{createtime,jdbcType=CHAR}, 
+      #{lastudpateuser,jdbcType=CHAR}, #{lastupdatetime,jdbcType=CHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.carmanager.webapp.basedata.bean.AccountBank" >
+    insert into t_bd_accountbank
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        fid,
+      </if>
+      <if test="name != null" >
+        fname,
+      </if>
+      <if test="number != null" >
+        fnumber,
+      </if>
+      <if test="bankaccount != null" >
+        fbankaccount,
+      </if>
+      <if test="shopid != null" >
+        fshopid,
+      </if>
+      <if test="isclosed != null" >
+        fisclosed,
+      </if>
+      <if test="opendate != null" >
+        fopendate,
+      </if>
+      <if test="closedate != null" >
+        fclosedate,
+      </if>
+      <if test="bank != null" >
+        fbank,
+      </if>
+      <if test="phonenumber != null" >
+        fphonenumber,
+      </if>
+      <if test="issetbankinterface != null" >
+        fissetbankinterface,
+      </if>
+      <if test="banktype != null" >
+        fbanktype,
+      </if>
+      <if test="inneraccount != null" >
+        finneraccount,
+      </if>
+      <if test="ctrlstrategy != null" >
+        fctrlstrategy,
+      </if>
+      <if test="classification != null" >
+        fclassification,
+      </if>
+      <if test="ismotheraccount != null" >
+        fismotheraccount,
+      </if>
+      <if test="accounttype != null" >
+        faccounttype,
+      </if>
+      <if test="notoutpay != null" >
+        fnotoutpay,
+      </if>
+      <if test="subaccount != null" >
+        fsubaccount,
+      </if>
+      <if test="isbank != null" >
+        fisbank,
+      </if>
+      <if test="iscash != null" >
+        fiscash,
+      </if>
+      <if test="acctname != null" >
+        facctname,
+      </if>
+      <if test="relemotheracct != null" >
+        frelemotheracct,
+      </if>
+      <if test="isdcpay != null" >
+        fisdcpay,
+      </if>
+      <if test="isreckoning != null" >
+        fisreckoning,
+      </if>
+      <if test="simplecode != null" >
+        fsimplecode,
+      </if>
+      <if test="agencyshop != null" >
+        fagencyshop,
+      </if>
+      <if test="maxpayamount != null" >
+        fmaxpayamount,
+      </if>
+      <if test="applybillid != null" >
+        fapplybillid,
+      </if>
+      <if test="bankversion != null" >
+        fbankversion,
+      </if>
+      <if test="bankcert != null" >
+        fbankcert,
+      </if>
+      <if test="reference != null" >
+        freference,
+      </if>
+      <if test="country != null" >
+        fcountry,
+      </if>
+      <if test="bankinterface != null" >
+        fbankinterface,
+      </if>
+      <if test="bankinterfaceid != null" >
+        fbankinterfaceid,
+      </if>
+      <if test="syncstatus != null" >
+        fsyncstatus,
+      </if>
+      <if test="syncstatusmsg != null" >
+        fsyncstatusmsg,
+      </if>
+      <if test="sharetype != null" >
+        fsharetype,
+      </if>
+      <if test="description != null" >
+        fdescription,
+      </if>
+      <if test="creator != null" >
+        fcreator,
+      </if>
+      <if test="createtime != null" >
+        fcreatetime,
+      </if>
+      <if test="lastudpateuser != null" >
+        flastudpateuser,
+      </if>
+      <if test="lastupdatetime != null" >
+        flastupdatetime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=CHAR},
+      </if>
+      <if test="name != null" >
+        #{name,jdbcType=CHAR},
+      </if>
+      <if test="number != null" >
+        #{number,jdbcType=CHAR},
+      </if>
+      <if test="bankaccount != null" >
+        #{bankaccount,jdbcType=CHAR},
+      </if>
+      <if test="shopid != null" >
+        #{shopid,jdbcType=CHAR},
+      </if>
+      <if test="isclosed != null" >
+        #{isclosed,jdbcType=CHAR},
+      </if>
+      <if test="opendate != null" >
+        #{opendate,jdbcType=CHAR},
+      </if>
+      <if test="closedate != null" >
+        #{closedate,jdbcType=CHAR},
+      </if>
+      <if test="bank != null" >
+        #{bank,jdbcType=CHAR},
+      </if>
+      <if test="phonenumber != null" >
+        #{phonenumber,jdbcType=CHAR},
+      </if>
+      <if test="issetbankinterface != null" >
+        #{issetbankinterface,jdbcType=CHAR},
+      </if>
+      <if test="banktype != null" >
+        #{banktype,jdbcType=CHAR},
+      </if>
+      <if test="inneraccount != null" >
+        #{inneraccount,jdbcType=CHAR},
+      </if>
+      <if test="ctrlstrategy != null" >
+        #{ctrlstrategy,jdbcType=CHAR},
+      </if>
+      <if test="classification != null" >
+        #{classification,jdbcType=CHAR},
+      </if>
+      <if test="ismotheraccount != null" >
+        #{ismotheraccount,jdbcType=CHAR},
+      </if>
+      <if test="accounttype != null" >
+        #{accounttype,jdbcType=CHAR},
+      </if>
+      <if test="notoutpay != null" >
+        #{notoutpay,jdbcType=CHAR},
+      </if>
+      <if test="subaccount != null" >
+        #{subaccount,jdbcType=CHAR},
+      </if>
+      <if test="isbank != null" >
+        #{isbank,jdbcType=CHAR},
+      </if>
+      <if test="iscash != null" >
+        #{iscash,jdbcType=CHAR},
+      </if>
+      <if test="acctname != null" >
+        #{acctname,jdbcType=CHAR},
+      </if>
+      <if test="relemotheracct != null" >
+        #{relemotheracct,jdbcType=CHAR},
+      </if>
+      <if test="isdcpay != null" >
+        #{isdcpay,jdbcType=CHAR},
+      </if>
+      <if test="isreckoning != null" >
+        #{isreckoning,jdbcType=CHAR},
+      </if>
+      <if test="simplecode != null" >
+        #{simplecode,jdbcType=CHAR},
+      </if>
+      <if test="agencyshop != null" >
+        #{agencyshop,jdbcType=CHAR},
+      </if>
+      <if test="maxpayamount != null" >
+        #{maxpayamount,jdbcType=CHAR},
+      </if>
+      <if test="applybillid != null" >
+        #{applybillid,jdbcType=CHAR},
+      </if>
+      <if test="bankversion != null" >
+        #{bankversion,jdbcType=CHAR},
+      </if>
+      <if test="bankcert != null" >
+        #{bankcert,jdbcType=CHAR},
+      </if>
+      <if test="reference != null" >
+        #{reference,jdbcType=CHAR},
+      </if>
+      <if test="country != null" >
+        #{country,jdbcType=CHAR},
+      </if>
+      <if test="bankinterface != null" >
+        #{bankinterface,jdbcType=CHAR},
+      </if>
+      <if test="bankinterfaceid != null" >
+        #{bankinterfaceid,jdbcType=CHAR},
+      </if>
+      <if test="syncstatus != null" >
+        #{syncstatus,jdbcType=CHAR},
+      </if>
+      <if test="syncstatusmsg != null" >
+        #{syncstatusmsg,jdbcType=CHAR},
+      </if>
+      <if test="sharetype != null" >
+        #{sharetype,jdbcType=CHAR},
+      </if>
+      <if test="description != null" >
+        #{description,jdbcType=CHAR},
+      </if>
+      <if test="creator != null" >
+        #{creator,jdbcType=CHAR},
+      </if>
+      <if test="createtime != null" >
+        #{createtime,jdbcType=CHAR},
+      </if>
+      <if test="lastudpateuser != null" >
+        #{lastudpateuser,jdbcType=CHAR},
+      </if>
+      <if test="lastupdatetime != null" >
+        #{lastupdatetime,jdbcType=CHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.carmanager.webapp.basedata.bean.AccountBank" >
+    update t_bd_accountbank
+    <set >
+      <if test="name != null" >
+        fname = #{name,jdbcType=CHAR},
+      </if>
+      <if test="number != null" >
+        fnumber = #{number,jdbcType=CHAR},
+      </if>
+      <if test="bankaccount != null" >
+        fbankaccount = #{bankaccount,jdbcType=CHAR},
+      </if>
+      <if test="shopid != null" >
+        fshopid = #{shopid,jdbcType=CHAR},
+      </if>
+      <if test="isclosed != null" >
+        fisclosed = #{isclosed,jdbcType=CHAR},
+      </if>
+      <if test="opendate != null" >
+        fopendate = #{opendate,jdbcType=CHAR},
+      </if>
+      <if test="closedate != null" >
+        fclosedate = #{closedate,jdbcType=CHAR},
+      </if>
+      <if test="bank != null" >
+        fbank = #{bank,jdbcType=CHAR},
+      </if>
+      <if test="phonenumber != null" >
+        fphonenumber = #{phonenumber,jdbcType=CHAR},
+      </if>
+      <if test="issetbankinterface != null" >
+        fissetbankinterface = #{issetbankinterface,jdbcType=CHAR},
+      </if>
+      <if test="banktype != null" >
+        fbanktype = #{banktype,jdbcType=CHAR},
+      </if>
+      <if test="inneraccount != null" >
+        finneraccount = #{inneraccount,jdbcType=CHAR},
+      </if>
+      <if test="ctrlstrategy != null" >
+        fctrlstrategy = #{ctrlstrategy,jdbcType=CHAR},
+      </if>
+      <if test="classification != null" >
+        fclassification = #{classification,jdbcType=CHAR},
+      </if>
+      <if test="ismotheraccount != null" >
+        fismotheraccount = #{ismotheraccount,jdbcType=CHAR},
+      </if>
+      <if test="accounttype != null" >
+        faccounttype = #{accounttype,jdbcType=CHAR},
+      </if>
+      <if test="notoutpay != null" >
+        fnotoutpay = #{notoutpay,jdbcType=CHAR},
+      </if>
+      <if test="subaccount != null" >
+        fsubaccount = #{subaccount,jdbcType=CHAR},
+      </if>
+      <if test="isbank != null" >
+        fisbank = #{isbank,jdbcType=CHAR},
+      </if>
+      <if test="iscash != null" >
+        fiscash = #{iscash,jdbcType=CHAR},
+      </if>
+      <if test="acctname != null" >
+        facctname = #{acctname,jdbcType=CHAR},
+      </if>
+      <if test="relemotheracct != null" >
+        frelemotheracct = #{relemotheracct,jdbcType=CHAR},
+      </if>
+      <if test="isdcpay != null" >
+        fisdcpay = #{isdcpay,jdbcType=CHAR},
+      </if>
+      <if test="isreckoning != null" >
+        fisreckoning = #{isreckoning,jdbcType=CHAR},
+      </if>
+      <if test="simplecode != null" >
+        fsimplecode = #{simplecode,jdbcType=CHAR},
+      </if>
+      <if test="agencyshop != null" >
+        fagencyshop = #{agencyshop,jdbcType=CHAR},
+      </if>
+      <if test="maxpayamount != null" >
+        fmaxpayamount = #{maxpayamount,jdbcType=CHAR},
+      </if>
+      <if test="applybillid != null" >
+        fapplybillid = #{applybillid,jdbcType=CHAR},
+      </if>
+      <if test="bankversion != null" >
+        fbankversion = #{bankversion,jdbcType=CHAR},
+      </if>
+      <if test="bankcert != null" >
+        fbankcert = #{bankcert,jdbcType=CHAR},
+      </if>
+      <if test="reference != null" >
+        freference = #{reference,jdbcType=CHAR},
+      </if>
+      <if test="country != null" >
+        fcountry = #{country,jdbcType=CHAR},
+      </if>
+      <if test="bankinterface != null" >
+        fbankinterface = #{bankinterface,jdbcType=CHAR},
+      </if>
+      <if test="bankinterfaceid != null" >
+        fbankinterfaceid = #{bankinterfaceid,jdbcType=CHAR},
+      </if>
+      <if test="syncstatus != null" >
+        fsyncstatus = #{syncstatus,jdbcType=CHAR},
+      </if>
+      <if test="syncstatusmsg != null" >
+        fsyncstatusmsg = #{syncstatusmsg,jdbcType=CHAR},
+      </if>
+      <if test="sharetype != null" >
+        fsharetype = #{sharetype,jdbcType=CHAR},
+      </if>
+      <if test="description != null" >
+        fdescription = #{description,jdbcType=CHAR},
+      </if>
+      <if test="creator != null" >
+        fcreator = #{creator,jdbcType=CHAR},
+      </if>
+      <if test="createtime != null" >
+        fcreatetime = #{createtime,jdbcType=CHAR},
+      </if>
+      <if test="lastudpateuser != null" >
+        flastudpateuser = #{lastudpateuser,jdbcType=CHAR},
+      </if>
+      <if test="lastupdatetime != null" >
+        flastupdatetime = #{lastupdatetime,jdbcType=CHAR},
+      </if>
+    </set>
+    where fid = #{id,jdbcType=CHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.carmanager.webapp.basedata.bean.AccountBank" >
+    update t_bd_accountbank
+    set fname = #{name,jdbcType=CHAR},
+      fnumber = #{number,jdbcType=CHAR},
+      fbankaccount = #{bankaccount,jdbcType=CHAR},
+      fshopid = #{shopid,jdbcType=CHAR},
+      fisclosed = #{isclosed,jdbcType=CHAR},
+      fopendate = #{opendate,jdbcType=CHAR},
+      fclosedate = #{closedate,jdbcType=CHAR},
+      fbank = #{bank,jdbcType=CHAR},
+      fphonenumber = #{phonenumber,jdbcType=CHAR},
+      fissetbankinterface = #{issetbankinterface,jdbcType=CHAR},
+      fbanktype = #{banktype,jdbcType=CHAR},
+      finneraccount = #{inneraccount,jdbcType=CHAR},
+      fctrlstrategy = #{ctrlstrategy,jdbcType=CHAR},
+      fclassification = #{classification,jdbcType=CHAR},
+      fismotheraccount = #{ismotheraccount,jdbcType=CHAR},
+      faccounttype = #{accounttype,jdbcType=CHAR},
+      fnotoutpay = #{notoutpay,jdbcType=CHAR},
+      fsubaccount = #{subaccount,jdbcType=CHAR},
+      fisbank = #{isbank,jdbcType=CHAR},
+      fiscash = #{iscash,jdbcType=CHAR},
+      facctname = #{acctname,jdbcType=CHAR},
+      frelemotheracct = #{relemotheracct,jdbcType=CHAR},
+      fisdcpay = #{isdcpay,jdbcType=CHAR},
+      fisreckoning = #{isreckoning,jdbcType=CHAR},
+      fsimplecode = #{simplecode,jdbcType=CHAR},
+      fagencyshop = #{agencyshop,jdbcType=CHAR},
+      fmaxpayamount = #{maxpayamount,jdbcType=CHAR},
+      fapplybillid = #{applybillid,jdbcType=CHAR},
+      fbankversion = #{bankversion,jdbcType=CHAR},
+      fbankcert = #{bankcert,jdbcType=CHAR},
+      freference = #{reference,jdbcType=CHAR},
+      fcountry = #{country,jdbcType=CHAR},
+      fbankinterface = #{bankinterface,jdbcType=CHAR},
+      fbankinterfaceid = #{bankinterfaceid,jdbcType=CHAR},
+      fsyncstatus = #{syncstatus,jdbcType=CHAR},
+      fsyncstatusmsg = #{syncstatusmsg,jdbcType=CHAR},
+      fsharetype = #{sharetype,jdbcType=CHAR},
+      fdescription = #{description,jdbcType=CHAR},
+      fcreator = #{creator,jdbcType=CHAR},
+      fcreatetime = #{createtime,jdbcType=CHAR},
+      flastudpateuser = #{lastudpateuser,jdbcType=CHAR},
+      flastupdatetime = #{lastupdatetime,jdbcType=CHAR}
+    where fid = #{id,jdbcType=CHAR}
+  </update>
+</mapper>

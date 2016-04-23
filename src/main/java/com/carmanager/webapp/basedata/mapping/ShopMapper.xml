@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.carmanager.webapp.basedata.dao.ShopDao" >
+  <resultMap id="BaseResultMap" type="com.carmanager.webapp.basedata.bean.Shop" >
+    <id column="fid" property="id" jdbcType="VARCHAR" />
+    <result column="fname" property="name" jdbcType="VARCHAR" />
+    <result column="fnumber" property="number" jdbcType="VARCHAR" />
+    <result column="fparentid" property="parentid" jdbcType="VARCHAR" />
+    <result column="ftaxnumber" property="taxnumber" jdbcType="VARCHAR" />
+    <result column="fisgroup" property="isgroup" jdbcType="INTEGER" />
+    <result column="faccountbank" property="accountbank" jdbcType="VARCHAR" />
+    <result column="faccountperiodtype" property="accountperiodtype" jdbcType="VARCHAR" />
+    <result column="fjuridicalperson" property="juridicalperson" jdbcType="VARCHAR" />
+    <result column="faddress" property="address" jdbcType="VARCHAR" />
+    <result column="fregisteredcapital" property="registeredcapital" jdbcType="DECIMAL" />
+    <result column="fsetupdate" property="setupdate" jdbcType="DATE" />
+    <result column="fendupdate" property="endupdate" jdbcType="DATE" />
+    <result column="fregisteredcode" property="registeredcode" jdbcType="VARCHAR" />
+    <result column="fdescription" property="description" jdbcType="VARCHAR" />
+    <result column="fcreator" property="creator" jdbcType="VARCHAR" />
+    <result column="fcreatetime" property="createtime" jdbcType="DATE" />
+    <result column="flastupdateuser" property="lastupdateuser" jdbcType="VARCHAR" />
+    <result column="flastupdatetime" property="lastupdatetime" jdbcType="DATE" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    fid, fname, fnumber, fparentid, ftaxnumber, fisgroup, faccountbank, faccountperiodtype, 
+    fjuridicalperson, faddress, fregisteredcapital, fsetupdate, fendupdate, fregisteredcode, 
+    fdescription, fcreator, fcreatetime, flastupdateuser, flastupdatetime
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_bd_shop
+    where fid = #{id,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from t_bd_shop
+    where fid = #{id,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.carmanager.webapp.basedata.bean.Shop" >
+    insert into t_bd_shop (fid, fname, fnumber, 
+      fparentid, ftaxnumber, fisgroup, 
+      faccountbank, faccountperiodtype, fjuridicalperson, 
+      faddress, fregisteredcapital, fsetupdate, 
+      fendupdate, fregisteredcode, fdescription, 
+      fcreator, fcreatetime, flastupdateuser, 
+      flastupdatetime)
+    values (#{id,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, #{number,jdbcType=VARCHAR}, 
+      #{parentid,jdbcType=VARCHAR}, #{taxnumber,jdbcType=VARCHAR}, #{isgroup,jdbcType=INTEGER}, 
+      #{accountbank,jdbcType=VARCHAR}, #{accountperiodtype,jdbcType=VARCHAR}, #{juridicalperson,jdbcType=VARCHAR}, 
+      #{address,jdbcType=VARCHAR}, #{registeredcapital,jdbcType=DECIMAL}, #{setupdate,jdbcType=DATE}, 
+      #{endupdate,jdbcType=DATE}, #{registeredcode,jdbcType=VARCHAR}, #{description,jdbcType=VARCHAR}, 
+      #{creator,jdbcType=VARCHAR}, #{createtime,jdbcType=DATE}, #{lastupdateuser,jdbcType=VARCHAR}, 
+      #{lastupdatetime,jdbcType=DATE})
+  </insert>
+  <insert id="insertSelective" parameterType="com.carmanager.webapp.basedata.bean.Shop" >
+    insert into t_bd_shop
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        fid,
+      </if>
+      <if test="name != null" >
+        fname,
+      </if>
+      <if test="number != null" >
+        fnumber,
+      </if>
+      <if test="parentid != null" >
+        fparentid,
+      </if>
+      <if test="taxnumber != null" >
+        ftaxnumber,
+      </if>
+      <if test="isgroup != null" >
+        fisgroup,
+      </if>
+      <if test="accountbank != null" >
+        faccountbank,
+      </if>
+      <if test="accountperiodtype != null" >
+        faccountperiodtype,
+      </if>
+      <if test="juridicalperson != null" >
+        fjuridicalperson,
+      </if>
+      <if test="address != null" >
+        faddress,
+      </if>
+      <if test="registeredcapital != null" >
+        fregisteredcapital,
+      </if>
+      <if test="setupdate != null" >
+        fsetupdate,
+      </if>
+      <if test="endupdate != null" >
+        fendupdate,
+      </if>
+      <if test="registeredcode != null" >
+        fregisteredcode,
+      </if>
+      <if test="description != null" >
+        fdescription,
+      </if>
+      <if test="creator != null" >
+        fcreator,
+      </if>
+      <if test="createtime != null" >
+        fcreatetime,
+      </if>
+      <if test="lastupdateuser != null" >
+        flastupdateuser,
+      </if>
+      <if test="lastupdatetime != null" >
+        flastupdatetime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null" >
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="number != null" >
+        #{number,jdbcType=VARCHAR},
+      </if>
+      <if test="parentid != null" >
+        #{parentid,jdbcType=VARCHAR},
+      </if>
+      <if test="taxnumber != null" >
+        #{taxnumber,jdbcType=VARCHAR},
+      </if>
+      <if test="isgroup != null" >
+        #{isgroup,jdbcType=INTEGER},
+      </if>
+      <if test="accountbank != null" >
+        #{accountbank,jdbcType=VARCHAR},
+      </if>
+      <if test="accountperiodtype != null" >
+        #{accountperiodtype,jdbcType=VARCHAR},
+      </if>
+      <if test="juridicalperson != null" >
+        #{juridicalperson,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null" >
+        #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="registeredcapital != null" >
+        #{registeredcapital,jdbcType=DECIMAL},
+      </if>
+      <if test="setupdate != null" >
+        #{setupdate,jdbcType=DATE},
+      </if>
+      <if test="endupdate != null" >
+        #{endupdate,jdbcType=DATE},
+      </if>
+      <if test="registeredcode != null" >
+        #{registeredcode,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null" >
+        #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="creator != null" >
+        #{creator,jdbcType=VARCHAR},
+      </if>
+      <if test="createtime != null" >
+        #{createtime,jdbcType=DATE},
+      </if>
+      <if test="lastupdateuser != null" >
+        #{lastupdateuser,jdbcType=VARCHAR},
+      </if>
+      <if test="lastupdatetime != null" >
+        #{lastupdatetime,jdbcType=DATE},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.carmanager.webapp.basedata.bean.Shop" >
+    update t_bd_shop
+    <set >
+      <if test="name != null" >
+        fname = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="number != null" >
+        fnumber = #{number,jdbcType=VARCHAR},
+      </if>
+      <if test="parentid != null" >
+        fparentid = #{parentid,jdbcType=VARCHAR},
+      </if>
+      <if test="taxnumber != null" >
+        ftaxnumber = #{taxnumber,jdbcType=VARCHAR},
+      </if>
+      <if test="isgroup != null" >
+        fisgroup = #{isgroup,jdbcType=INTEGER},
+      </if>
+      <if test="accountbank != null" >
+        faccountbank = #{accountbank,jdbcType=VARCHAR},
+      </if>
+      <if test="accountperiodtype != null" >
+        faccountperiodtype = #{accountperiodtype,jdbcType=VARCHAR},
+      </if>
+      <if test="juridicalperson != null" >
+        fjuridicalperson = #{juridicalperson,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null" >
+        faddress = #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="registeredcapital != null" >
+        fregisteredcapital = #{registeredcapital,jdbcType=DECIMAL},
+      </if>
+      <if test="setupdate != null" >
+        fsetupdate = #{setupdate,jdbcType=DATE},
+      </if>
+      <if test="endupdate != null" >
+        fendupdate = #{endupdate,jdbcType=DATE},
+      </if>
+      <if test="registeredcode != null" >
+        fregisteredcode = #{registeredcode,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null" >
+        fdescription = #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="creator != null" >
+        fcreator = #{creator,jdbcType=VARCHAR},
+      </if>
+      <if test="createtime != null" >
+        fcreatetime = #{createtime,jdbcType=DATE},
+      </if>
+      <if test="lastupdateuser != null" >
+        flastupdateuser = #{lastupdateuser,jdbcType=VARCHAR},
+      </if>
+      <if test="lastupdatetime != null" >
+        flastupdatetime = #{lastupdatetime,jdbcType=DATE},
+      </if>
+    </set>
+    where fid = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.carmanager.webapp.basedata.bean.Shop" >
+    update t_bd_shop
+    set fname = #{name,jdbcType=VARCHAR},
+      fnumber = #{number,jdbcType=VARCHAR},
+      fparentid = #{parentid,jdbcType=VARCHAR},
+      ftaxnumber = #{taxnumber,jdbcType=VARCHAR},
+      fisgroup = #{isgroup,jdbcType=INTEGER},
+      faccountbank = #{accountbank,jdbcType=VARCHAR},
+      faccountperiodtype = #{accountperiodtype,jdbcType=VARCHAR},
+      fjuridicalperson = #{juridicalperson,jdbcType=VARCHAR},
+      faddress = #{address,jdbcType=VARCHAR},
+      fregisteredcapital = #{registeredcapital,jdbcType=DECIMAL},
+      fsetupdate = #{setupdate,jdbcType=DATE},
+      fendupdate = #{endupdate,jdbcType=DATE},
+      fregisteredcode = #{registeredcode,jdbcType=VARCHAR},
+      fdescription = #{description,jdbcType=VARCHAR},
+      fcreator = #{creator,jdbcType=VARCHAR},
+      fcreatetime = #{createtime,jdbcType=DATE},
+      flastupdateuser = #{lastupdateuser,jdbcType=VARCHAR},
+      flastupdatetime = #{lastupdatetime,jdbcType=DATE}
+    where fid = #{id,jdbcType=VARCHAR}
+  </update>
+</mapper>

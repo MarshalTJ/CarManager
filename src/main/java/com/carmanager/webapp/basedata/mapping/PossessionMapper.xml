@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.carmanager.webapp.basedata.dao.PossessionDao" >
+  <resultMap id="BaseResultMap" type="com.carmanager.webapp.basedata.bean.Possession" >
+    <id column="fid" property="id" jdbcType="VARCHAR" />
+    <result column="fname" property="name" jdbcType="VARCHAR" />
+    <result column="fnumber" property="number" jdbcType="VARCHAR" />
+    <result column="fstatus" property="status" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    fid, fname, fnumber, fstatus
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_bd_possession
+    where fid = #{id,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from t_bd_possession
+    where fid = #{id,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.carmanager.webapp.basedata.bean.Possession" >
+    insert into t_bd_possession (fid, fname, fnumber, 
+      fstatus)
+    values (#{id,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, #{number,jdbcType=VARCHAR}, 
+      #{status,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.carmanager.webapp.basedata.bean.Possession" >
+    insert into t_bd_possession
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        fid,
+      </if>
+      <if test="name != null" >
+        fname,
+      </if>
+      <if test="number != null" >
+        fnumber,
+      </if>
+      <if test="status != null" >
+        fstatus,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null" >
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="number != null" >
+        #{number,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.carmanager.webapp.basedata.bean.Possession" >
+    update t_bd_possession
+    <set >
+      <if test="name != null" >
+        fname = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="number != null" >
+        fnumber = #{number,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        fstatus = #{status,jdbcType=INTEGER},
+      </if>
+    </set>
+    where fid = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.carmanager.webapp.basedata.bean.Possession" >
+    update t_bd_possession
+    set fname = #{name,jdbcType=VARCHAR},
+      fnumber = #{number,jdbcType=VARCHAR},
+      fstatus = #{status,jdbcType=INTEGER}
+    where fid = #{id,jdbcType=VARCHAR}
+  </update>
+</mapper>

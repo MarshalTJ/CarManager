@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.carmanager.webapp.basedata.dao.CustomerDao" >
+  <resultMap id="BaseResultMap" type="com.carmanager.webapp.basedata.bean.Customer" >
+    <id column="fid" property="id" jdbcType="VARCHAR" />
+    <result column="fname" property="name" jdbcType="VARCHAR" />
+    <result column="fnumber" property="number" jdbcType="VARCHAR" />
+    <result column="fopenid" property="openid" jdbcType="VARCHAR" />
+    <result column="fheadportrait" property="headportrait" jdbcType="VARCHAR" />
+    <result column="fissubsciber" property="issubsciber" jdbcType="CHAR" />
+    <result column="fbindcode" property="bindcode" jdbcType="CHAR" />
+    <result column="fshopid" property="shopid" jdbcType="VARCHAR" />
+    <result column="fgender" property="gender" jdbcType="INTEGER" />
+    <result column="fbirthday" property="birthday" jdbcType="DATE" />
+    <result column="femai" property="emai" jdbcType="VARCHAR" />
+    <result column="fstate" property="state" jdbcType="INTEGER" />
+    <result column="fhomephone" property="homephone" jdbcType="VARCHAR" />
+    <result column="fofficephone" property="officephone" jdbcType="VARCHAR" />
+    <result column="fcell" property="cell" jdbcType="VARCHAR" />
+    <result column="fidcard" property="idcard" jdbcType="VARCHAR" />
+    <result column="fheight" property="height" jdbcType="INTEGER" />
+    <result column="fnativeplace" property="nativeplace" jdbcType="VARCHAR" />
+    <result column="fbloodtype" property="bloodtype" jdbcType="INTEGER" />
+    <result column="ffolk" property="folk" jdbcType="VARCHAR" />
+    <result column="fdescription" property="description" jdbcType="VARCHAR" />
+    <result column="fcreator" property="creator" jdbcType="VARCHAR" />
+    <result column="fcreatetime" property="createtime" jdbcType="DATE" />
+    <result column="flastupdateuser" property="lastupdateuser" jdbcType="VARCHAR" />
+    <result column="flastupdatetime" property="lastupdatetime" jdbcType="DATE" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    fid, fname, fnumber, fopenid, fheadportrait, fissubsciber, fbindcode, fshopid, fgender, 
+    fbirthday, femai, fstate, fhomephone, fofficephone, fcell, fidcard, fheight, fnativeplace, 
+    fbloodtype, ffolk, fdescription, fcreator, fcreatetime, flastupdateuser, flastupdatetime
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_bd_customer
+    where fid = #{id,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from t_bd_customer
+    where fid = #{id,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.carmanager.webapp.basedata.bean.Customer" >
+    insert into t_bd_customer (fid, fname, fnumber, 
+      fopenid, fheadportrait, fissubsciber, 
+      fbindcode, fshopid, fgender, 
+      fbirthday, femai, fstate, 
+      fhomephone, fofficephone, fcell, 
+      fidcard, fheight, fnativeplace, 
+      fbloodtype, ffolk, fdescription, 
+      fcreator, fcreatetime, flastupdateuser, 
+      flastupdatetime)
+    values (#{id,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, #{number,jdbcType=VARCHAR}, 
+      #{openid,jdbcType=VARCHAR}, #{headportrait,jdbcType=VARCHAR}, #{issubsciber,jdbcType=CHAR}, 
+      #{bindcode,jdbcType=CHAR}, #{shopid,jdbcType=VARCHAR}, #{gender,jdbcType=INTEGER}, 
+      #{birthday,jdbcType=DATE}, #{emai,jdbcType=VARCHAR}, #{state,jdbcType=INTEGER}, 
+      #{homephone,jdbcType=VARCHAR}, #{officephone,jdbcType=VARCHAR}, #{cell,jdbcType=VARCHAR}, 
+      #{idcard,jdbcType=VARCHAR}, #{height,jdbcType=INTEGER}, #{nativeplace,jdbcType=VARCHAR}, 
+      #{bloodtype,jdbcType=INTEGER}, #{folk,jdbcType=VARCHAR}, #{description,jdbcType=VARCHAR}, 
+      #{creator,jdbcType=VARCHAR}, #{createtime,jdbcType=DATE}, #{lastupdateuser,jdbcType=VARCHAR}, 
+      #{lastupdatetime,jdbcType=DATE})
+  </insert>
+  <insert id="insertSelective" parameterType="com.carmanager.webapp.basedata.bean.Customer" >
+    insert into t_bd_customer
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        fid,
+      </if>
+      <if test="name != null" >
+        fname,
+      </if>
+      <if test="number != null" >
+        fnumber,
+      </if>
+      <if test="openid != null" >
+        fopenid,
+      </if>
+      <if test="headportrait != null" >
+        fheadportrait,
+      </if>
+      <if test="issubsciber != null" >
+        fissubsciber,
+      </if>
+      <if test="bindcode != null" >
+        fbindcode,
+      </if>
+      <if test="shopid != null" >
+        fshopid,
+      </if>
+      <if test="gender != null" >
+        fgender,
+      </if>
+      <if test="birthday != null" >
+        fbirthday,
+      </if>
+      <if test="emai != null" >
+        femai,
+      </if>
+      <if test="state != null" >
+        fstate,
+      </if>
+      <if test="homephone != null" >
+        fhomephone,
+      </if>
+      <if test="officephone != null" >
+        fofficephone,
+      </if>
+      <if test="cell != null" >
+        fcell,
+      </if>
+      <if test="idcard != null" >
+        fidcard,
+      </if>
+      <if test="height != null" >
+        fheight,
+      </if>
+      <if test="nativeplace != null" >
+        fnativeplace,
+      </if>
+      <if test="bloodtype != null" >
+        fbloodtype,
+      </if>
+      <if test="folk != null" >
+        ffolk,
+      </if>
+      <if test="description != null" >
+        fdescription,
+      </if>
+      <if test="creator != null" >
+        fcreator,
+      </if>
+      <if test="createtime != null" >
+        fcreatetime,
+      </if>
+      <if test="lastupdateuser != null" >
+        flastupdateuser,
+      </if>
+      <if test="lastupdatetime != null" >
+        flastupdatetime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null" >
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="number != null" >
+        #{number,jdbcType=VARCHAR},
+      </if>
+      <if test="openid != null" >
+        #{openid,jdbcType=VARCHAR},
+      </if>
+      <if test="headportrait != null" >
+        #{headportrait,jdbcType=VARCHAR},
+      </if>
+      <if test="issubsciber != null" >
+        #{issubsciber,jdbcType=CHAR},
+      </if>
+      <if test="bindcode != null" >
+        #{bindcode,jdbcType=CHAR},
+      </if>
+      <if test="shopid != null" >
+        #{shopid,jdbcType=VARCHAR},
+      </if>
+      <if test="gender != null" >
+        #{gender,jdbcType=INTEGER},
+      </if>
+      <if test="birthday != null" >
+        #{birthday,jdbcType=DATE},
+      </if>
+      <if test="emai != null" >
+        #{emai,jdbcType=VARCHAR},
+      </if>
+      <if test="state != null" >
+        #{state,jdbcType=INTEGER},
+      </if>
+      <if test="homephone != null" >
+        #{homephone,jdbcType=VARCHAR},
+      </if>
+      <if test="officephone != null" >
+        #{officephone,jdbcType=VARCHAR},
+      </if>
+      <if test="cell != null" >
+        #{cell,jdbcType=VARCHAR},
+      </if>
+      <if test="idcard != null" >
+        #{idcard,jdbcType=VARCHAR},
+      </if>
+      <if test="height != null" >
+        #{height,jdbcType=INTEGER},
+      </if>
+      <if test="nativeplace != null" >
+        #{nativeplace,jdbcType=VARCHAR},
+      </if>
+      <if test="bloodtype != null" >
+        #{bloodtype,jdbcType=INTEGER},
+      </if>
+      <if test="folk != null" >
+        #{folk,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null" >
+        #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="creator != null" >
+        #{creator,jdbcType=VARCHAR},
+      </if>
+      <if test="createtime != null" >
+        #{createtime,jdbcType=DATE},
+      </if>
+      <if test="lastupdateuser != null" >
+        #{lastupdateuser,jdbcType=VARCHAR},
+      </if>
+      <if test="lastupdatetime != null" >
+        #{lastupdatetime,jdbcType=DATE},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.carmanager.webapp.basedata.bean.Customer" >
+    update t_bd_customer
+    <set >
+      <if test="name != null" >
+        fname = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="number != null" >
+        fnumber = #{number,jdbcType=VARCHAR},
+      </if>
+      <if test="openid != null" >
+        fopenid = #{openid,jdbcType=VARCHAR},
+      </if>
+      <if test="headportrait != null" >
+        fheadportrait = #{headportrait,jdbcType=VARCHAR},
+      </if>
+      <if test="issubsciber != null" >
+        fissubsciber = #{issubsciber,jdbcType=CHAR},
+      </if>
+      <if test="bindcode != null" >
+        fbindcode = #{bindcode,jdbcType=CHAR},
+      </if>
+      <if test="shopid != null" >
+        fshopid = #{shopid,jdbcType=VARCHAR},
+      </if>
+      <if test="gender != null" >
+        fgender = #{gender,jdbcType=INTEGER},
+      </if>
+      <if test="birthday != null" >
+        fbirthday = #{birthday,jdbcType=DATE},
+      </if>
+      <if test="emai != null" >
+        femai = #{emai,jdbcType=VARCHAR},
+      </if>
+      <if test="state != null" >
+        fstate = #{state,jdbcType=INTEGER},
+      </if>
+      <if test="homephone != null" >
+        fhomephone = #{homephone,jdbcType=VARCHAR},
+      </if>
+      <if test="officephone != null" >
+        fofficephone = #{officephone,jdbcType=VARCHAR},
+      </if>
+      <if test="cell != null" >
+        fcell = #{cell,jdbcType=VARCHAR},
+      </if>
+      <if test="idcard != null" >
+        fidcard = #{idcard,jdbcType=VARCHAR},
+      </if>
+      <if test="height != null" >
+        fheight = #{height,jdbcType=INTEGER},
+      </if>
+      <if test="nativeplace != null" >
+        fnativeplace = #{nativeplace,jdbcType=VARCHAR},
+      </if>
+      <if test="bloodtype != null" >
+        fbloodtype = #{bloodtype,jdbcType=INTEGER},
+      </if>
+      <if test="folk != null" >
+        ffolk = #{folk,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null" >
+        fdescription = #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="creator != null" >
+        fcreator = #{creator,jdbcType=VARCHAR},
+      </if>
+      <if test="createtime != null" >
+        fcreatetime = #{createtime,jdbcType=DATE},
+      </if>
+      <if test="lastupdateuser != null" >
+        flastupdateuser = #{lastupdateuser,jdbcType=VARCHAR},
+      </if>
+      <if test="lastupdatetime != null" >
+        flastupdatetime = #{lastupdatetime,jdbcType=DATE},
+      </if>
+    </set>
+    where fid = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.carmanager.webapp.basedata.bean.Customer" >
+    update t_bd_customer
+    set fname = #{name,jdbcType=VARCHAR},
+      fnumber = #{number,jdbcType=VARCHAR},
+      fopenid = #{openid,jdbcType=VARCHAR},
+      fheadportrait = #{headportrait,jdbcType=VARCHAR},
+      fissubsciber = #{issubsciber,jdbcType=CHAR},
+      fbindcode = #{bindcode,jdbcType=CHAR},
+      fshopid = #{shopid,jdbcType=VARCHAR},
+      fgender = #{gender,jdbcType=INTEGER},
+      fbirthday = #{birthday,jdbcType=DATE},
+      femai = #{emai,jdbcType=VARCHAR},
+      fstate = #{state,jdbcType=INTEGER},
+      fhomephone = #{homephone,jdbcType=VARCHAR},
+      fofficephone = #{officephone,jdbcType=VARCHAR},
+      fcell = #{cell,jdbcType=VARCHAR},
+      fidcard = #{idcard,jdbcType=VARCHAR},
+      fheight = #{height,jdbcType=INTEGER},
+      fnativeplace = #{nativeplace,jdbcType=VARCHAR},
+      fbloodtype = #{bloodtype,jdbcType=INTEGER},
+      ffolk = #{folk,jdbcType=VARCHAR},
+      fdescription = #{description,jdbcType=VARCHAR},
+      fcreator = #{creator,jdbcType=VARCHAR},
+      fcreatetime = #{createtime,jdbcType=DATE},
+      flastupdateuser = #{lastupdateuser,jdbcType=VARCHAR},
+      flastupdatetime = #{lastupdatetime,jdbcType=DATE}
+    where fid = #{id,jdbcType=VARCHAR}
+  </update>
+</mapper>
