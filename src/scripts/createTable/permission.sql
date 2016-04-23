@@ -1,118 +1,273 @@
 /*==============================================================*/
-/* DBMS name:      MySQL 5.0                                    */
-/* Created on:     2016/4/23 星期六 上午 11:46:24                    */
+/* DBMS name:      Sybase SQL Anywhere 12                       */
+/* Created on:     2016/4/23 20:23:32                           */
 /*==============================================================*/
 
 
-drop table if exists t_pm_permitem;
+drop index if exists fuser.fuser_PK;
 
-drop table if exists t_pm_role;
+drop table if exists fuser;
 
-drop table if exists t_pm_roleperm;
+drop index if exists permitem.permitem_PK;
 
-drop table if exists t_pm_user;
+drop table if exists permitem;
 
-drop table if exists t_pm_userrole;
+drop index if exists role.role_PK;
+
+drop table if exists role;
+
+drop index if exists roleperm.roleperm_PK;
+
+drop table if exists roleperm;
+
+drop index if exists userrole.userrole_PK;
+
+drop table if exists userrole;
 
 /*==============================================================*/
-/* Table: t_pm_permitem                                         */
+/* Table: fuser                                                 */
 /*==============================================================*/
-create table t_pm_permitem
+create table fuser 
 (
-   fid                  varchar(50) not null comment 'uuid',
-   fname                varchar(100) not null comment '权限名称',
-   fnumber              varchar(50) not null comment '权限编码',
-   fui                  varchar(100) comment '对应UI',
-   falias               varchar(100) comment '别名',
-   flongnumber          varchar(200) comment '长编码',
-   fobjecttype          varchar(100) comment '对象类型',
-   ftype                int comment '类型',
-   fparentid            varchar(50) comment '父节点',
-   fisleaf              int comment '是否叶子',
-   foperationtype       int comment '操作类型',
-   fenabledatapermission int comment '是否支持数据权限',
-   fdescription         varchar(200) comment '描述',
-   primary key (fid)
-) ENGINE=INNODB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+   fid                  varchar(50)                    not null,
+   fname                varchar(100)                   not null,
+   fnumber              varchar(50)                    not null,
+   ftype                integer                        null,
+   fpassword            varchar(50)                    null,
+   fisLocked            integer                        null,
+   fisforbidden         integer                        null,
+   ferrCount            integer                        null,
+   fstaff               varchar(50)                    null,
+   flockedtime          date                           null,
+   fdescription         varchar(200)                   null,
+   fcreator             varchar(50)                    null,
+   fcreattime           date                           null,
+   flastupdateuser      varchar(50)                    null,
+   flastupdatetime      date                           null,
+   constraint PK_FUSER primary key (fid)
+);
 
-alter table t_pm_permitem comment '权限项';
+comment on table fuser is 
+'用户表';
+
+comment on column fuser.fid is 
+'uuid';
+
+comment on column fuser.fname is 
+'用户名称';
+
+comment on column fuser.fnumber is 
+'用户编码';
+
+comment on column fuser.ftype is 
+'用户类型';
+
+comment on column fuser.fpassword is 
+'密码';
+
+comment on column fuser.fisLocked is 
+'是否锁';
+
+comment on column fuser.fisforbidden is 
+'是否禁用';
+
+comment on column fuser.ferrCount is 
+'登陆错误次数';
+
+comment on column fuser.fstaff is 
+'职员';
+
+comment on column fuser.flockedtime is 
+'用户锁定时间';
+
+comment on column fuser.fdescription is 
+'描述';
+
+comment on column fuser.fcreator is 
+'创建者';
+
+comment on column fuser.fcreattime is 
+'创建时间';
+
+comment on column fuser.flastupdateuser is 
+'最后修改人';
+
+comment on column fuser.flastupdatetime is 
+'最后修改时间';
 
 /*==============================================================*/
-/* Table: t_pm_role                                             */
+/* Index: fuser_PK                                              */
 /*==============================================================*/
-create table t_pm_role
+create unique index fuser_PK on fuser (
+fid ASC
+);
+
+/*==============================================================*/
+/* Table: permitem                                              */
+/*==============================================================*/
+create table permitem 
 (
-   fid                  varchar(50) not null comment 'uuid',
-   fname                varchar(100) not null comment '角色名称',
-   fnumber              varchar(100) not null comment '角色编码',
-   fshopid              varchar(50) not null comment '所属店铺',
-   fdescription         varchar(200) comment '描述',
-   fcreator             varchar(50) comment '创建人',
-   fcreatetime          varchar(200) comment '创建时间',
-   flastupdateuser      varchar(50) comment '最后更新人',
-   flastupdatetime      varchar(200) comment '最后更新时间',
-   primary key (fid)
-) ENGINE=INNODB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+   fid                  varchar(50)                    not null,
+   fname                varchar(100)                   not null,
+   fnumber              varchar(50)                    not null,
+   fui                  varchar(100)                   null,
+   flongnumber          varchar(200)                   null,
+   fparentid            varchar(50)                    null,
+   fisleaf              integer                        null,
+   fdescription         varchar(200)                   null,
+   constraint PK_PERMITEM primary key (fid)
+);
 
-alter table t_pm_role comment '角色';
+comment on table permitem is 
+'权限项';
+
+comment on column permitem.fid is 
+'uuid';
+
+comment on column permitem.fname is 
+'权限名称';
+
+comment on column permitem.fnumber is 
+'权限编码';
+
+comment on column permitem.fui is 
+'对应UI';
+
+comment on column permitem.flongnumber is 
+'长编码';
+
+comment on column permitem.fparentid is 
+'父节点';
+
+comment on column permitem.fisleaf is 
+'是否叶子';
+
+comment on column permitem.fdescription is 
+'描述';
 
 /*==============================================================*/
-/* Table: t_pm_roleperm                                         */
+/* Index: permitem_PK                                           */
 /*==============================================================*/
-create table t_pm_roleperm
+create unique index permitem_PK on permitem (
+fid ASC
+);
+
+/*==============================================================*/
+/* Table: role                                                  */
+/*==============================================================*/
+create table role 
 (
-   fid                  varchar(50) not null comment 'uuid',
-   froleid              varchar(50) not null comment '角色',
-   fpermid              varchar(50) not null comment '权限项',
-   fpermtype            int comment '权限类型',
-   frulestructure       varchar(500) comment '规则表达式',
-   fruleexpr            varchar(500) comment '规则条件',
-   primary key (fid)
-) ENGINE=INNODB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+   fid                  varchar(50)                    not null,
+   fname                varchar(100)                   not null,
+   fnumber              varchar(100)                   not null,
+   fshopid              varchar(50)                    not null,
+   fdescription         varchar(200)                   null,
+   fcreator             varchar(50)                    null,
+   fcreatetime          varchar(200)                   null,
+   flastupdateuser      varchar(50)                    null,
+   flastupdatetime      varchar(200)                   null,
+   constraint PK_ROLE primary key (fid)
+);
+
+comment on table role is 
+'角色';
+
+comment on column role.fid is 
+'uuid';
+
+comment on column role.fname is 
+'角色名称';
+
+comment on column role.fnumber is 
+'角色编码';
+
+comment on column role.fshopid is 
+'所属店铺';
+
+comment on column role.fdescription is 
+'描述';
+
+comment on column role.fcreator is 
+'创建人';
+
+comment on column role.fcreatetime is 
+'创建时间';
+
+comment on column role.flastupdateuser is 
+'最后更新人';
+
+comment on column role.flastupdatetime is 
+'最后更新时间';
 
 /*==============================================================*/
-/* Table: t_pm_user                                             */
+/* Index: role_PK                                               */
 /*==============================================================*/
-create table t_pm_user
+create unique index role_PK on role (
+fid ASC
+);
+
+/*==============================================================*/
+/* Table: roleperm                                              */
+/*==============================================================*/
+create table roleperm 
 (
-   fid                  varchar(50) not null comment 'uuid',
-   fname                varchar(100) not null comment '用户名称',
-   fnumber              varchar(50) not null comment '用户编码',
-   fshopid              varchar(50) comment '所属店铺',
-   ftype                int comment '用户类型',
-   fpassword            varchar(50) comment '密码',
-   fisdelete            int comment '是否已经删除',
-   fislocked            int comment '是否锁',
-   fisforbidden         int comment '是否禁用',
-   feffectivedate       date comment '生效日期',
-   finvalidationdate    date comment '失效日期',
-   fisregister          int comment '是否注册',
-   ferrCount            int comment '登陆错误次数',
-   fstaff               varchar(50) comment '职员',
-   fsecurity            varchar(20) comment '密码策略',
-   flockedtime          date comment '用户锁定时间',
-   fbizadmin            int comment '是否为业务管理员',
-   fchangedpw           int comment '是否修改过密码',
-   fagentuser           varchar(50) comment '代理用户',
-   fpwdhisstr           varchar(100) comment '历史密码',
-   fdescription         varchar(200) comment '描述',
-   fcreator             varchar(50) comment '创建者',
-   fcreattime           date comment '创建时间',
-   flastupdateuser      varchar(50) comment '最后修改人',
-   flastupdatetime      date comment '最后修改时间',
-   primary key (fid)
-) ENGINE=INNODB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+   fid                  varchar(50)                    not null,
+   froleid              varchar(50)                    not null,
+   fpermid              varchar(50)                    not null,
+   fpermtype            integer                        null,
+   fruleexpr            varchar(500)                   null,
+   constraint PK_ROLEPERM primary key (fid)
+);
 
-alter table t_pm_user comment '用户表';
+comment on table roleperm is 
+'角色权限';
+
+comment on column roleperm.fid is 
+'uuid';
+
+comment on column roleperm.froleid is 
+'角色';
+
+comment on column roleperm.fpermid is 
+'权限项';
+
+comment on column roleperm.fpermtype is 
+'权限类型';
+
+comment on column roleperm.fruleexpr is 
+'规则条件';
 
 /*==============================================================*/
-/* Table: t_pm_userrole                                         */
+/* Index: roleperm_PK                                           */
 /*==============================================================*/
-create table t_pm_userrole
+create unique index roleperm_PK on roleperm (
+fid ASC
+);
+
+/*==============================================================*/
+/* Table: userrole                                              */
+/*==============================================================*/
+create table userrole 
 (
-   fid                  varchar(50) not null comment 'uuid',
-   froleid              varchar(50) not null comment '角色',
-   fuserid              varchar(50) not null comment '用户',
-   primary key (fid)
-) ENGINE=INNODB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+   fid                  varchar(50)                    not null,
+   froleid              varchar(50)                    not null,
+   fuserid              varchar(50)                    not null,
+   constraint PK_USERROLE primary key (fid)
+);
+
+comment on column userrole.fid is 
+'uuid';
+
+comment on column userrole.froleid is 
+'角色';
+
+comment on column userrole.fuserid is 
+'用户';
+
+/*==============================================================*/
+/* Index: userrole_PK                                           */
+/*==============================================================*/
+create unique index userrole_PK on userrole (
+fid ASC
+);
 
