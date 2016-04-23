@@ -33,7 +33,7 @@ create table t_pm_permitem
    fenabledatapermission int comment '是否支持数据权限',
    fdescription         varchar(200) comment '描述',
    primary key (fid)
-);
+) ENGINE=INNODB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 alter table t_pm_permitem comment '权限项';
 
@@ -52,7 +52,7 @@ create table t_pm_role
    flastupdateuser      varchar(50) comment '最后更新人',
    flastupdatetime      varchar(200) comment '最后更新时间',
    primary key (fid)
-);
+) ENGINE=INNODB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 alter table t_pm_role comment '角色';
 
@@ -68,7 +68,7 @@ create table t_pm_roleperm
    frulestructure       varchar(500) comment '规则表达式',
    fruleexpr            varchar(500) comment '规则条件',
    primary key (fid)
-);
+) ENGINE=INNODB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 /*==============================================================*/
 /* Table: t_pm_user                                             */
@@ -101,7 +101,7 @@ create table t_pm_user
    flastupdateuser      varchar(50) comment '最后修改人',
    flastupdatetime      date comment '最后修改时间',
    primary key (fid)
-);
+) ENGINE=INNODB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 alter table t_pm_user comment '用户表';
 
@@ -114,5 +114,5 @@ create table t_pm_userrole
    froleid              varchar(50) not null comment '角色',
    fuserid              varchar(50) not null comment '用户',
    primary key (fid)
-);
+) ENGINE=INNODB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 

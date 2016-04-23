@@ -27,51 +27,51 @@ drop table if exists T_BD_supplierproduct;
 /*==============================================================*/
 create table T_BD_accountbank
 (
-   fid                  char(10) not null comment 'uuid',
-   fname                char(10) not null comment '名称',
-   fnumber              char(10) not null comment '编码',
-   fbankaccount         char(10) comment '银行账号',
-   fshopid              char(10) comment '开户店铺',
-   fisclosed            char(10) comment '是否销户',
-   fopendate            char(10) comment '开户日期',
-   fclosedate           char(10) comment '销户日期',
-   fbank                char(10) comment '银行机构',
-   fphonenumber         char(10) comment '电话号码',
-   fissetbankinterface  char(10) comment '是否设置银行接口',
-   fbanktype            char(10) comment '银行类型',
-   finneraccount        char(10) comment '对应内部账号',
-   fctrlstrategy        char(10) comment '管理策略',
-   fclassification      char(10) comment '记账分类',
-   fismotheraccount     char(10) comment '是否母账号',
-   faccounttype         char(10) comment '账户性质',
-   fnotoutpay           char(10) comment '收否不允许对外支付',
-   fsubaccount          char(10) comment '母账号',
-   fisbank              char(10) comment '是否银行科目',
-   fiscash              char(10) comment '是否现金科目',
-   facctname            char(10) comment '账户名称',
-   frelemotheracct      char(10) comment '对应母账号',
-   fisdcpay             char(10) comment '是否定向划转',
-   fisreckoning         char(10) comment '是否清算户',
-   fsimplecode          char(10) comment '助记码',
-   fagencyshop          char(10) comment '代理付款店铺',
-   fmaxpayamount        char(10) comment '支付限额',
-   fapplybillid         char(10) comment '申请单id',
-   fbankversion         char(10) comment '银行版本',
-   fbankcert            char(10) comment '银行证书',
-   freference           char(10) comment '参考信息',
-   fcountry             char(10) comment '国家',
-   fbankinterface       char(10) comment '银企接口信息',
-   fbankinterfaceid     char(10) comment '银企接口id',
-   fsyncstatus          char(10) comment '同步状态',
-   fsyncstatusmsg       char(10) comment '同步状态结果返回信息',
-   fsharetype           char(10) comment '账户使用权限类型',
-   fdescription         char(10) comment '描述',
-   fcreator             char(10) comment '创建人',
-   fcreatetime          char(10) comment '创建时间',
-   flastudpateuser      char(10) comment '最后更新人',
-   flastupdatetime      char(10) comment '最后更新时间',
+   fid                  varchar(50) not null comment 'uuid',
+   fname                varchar(50) not null comment '名称',
+   fnumber              varchar(50) not null comment '编码',
+   fbankaccount         varchar(50) comment '银行账号',
+   fshopid              varchar(50) comment '开户店铺',
+   fisclosed            int         comment '是否销户',
+   fopendate            date comment '开户日期',
+   fclosedate           date comment '销户日期',
+   fbank                varchar(50) comment '银行机构',
+   fphonenumber         varchar(50) comment '电话号码',
+   fissetbankinterface  varchar(50) comment '是否设置银行接口',
+   fbanktype            varchar(50) comment '银行类型',
+   finneraccount        varchar(50) comment '对应内部账号',
+   fctrlstrategy        varchar(50) comment '管理策略',
+   fclassification      varchar(50) comment '记账分类',
+   fismotheraccount     varchar(50) comment '是否母账号',
+   faccounttype         varchar(50) comment '账户性质',
+   fnotoutpay           int         comment '收否不允许对外支付',
+   fsubaccount          varchar(50) comment '母账号',
+   fisbank              int         comment '是否银行科目',
+   fiscash              int         comment '是否现金科目',
+   facctname            varchar(50) comment '账户名称',
+   frelemotheracct      varchar(50) comment '对应母账号',
+   fisdcpay             int         comment '是否定向划转',
+   fisreckoning         int         comment '是否清算户',
+   fsimplecode          varchar(50) comment '助记码',
+   fagencyshop          varchar(50) comment '代理付款店铺',
+   fmaxpayamount        varchar(50) comment '支付限额',
+   fapplybillid         varchar(50) comment '申请单id',
+   fbankversion         varchar(50) comment '银行版本',
+   fbankcert            varchar(50) comment '银行证书',
+   freference           varchar(50) comment '参考信息',
+   fcountry             varchar(50) comment '国家',
+   fbankinterface       varchar(50) comment '银企接口信息',
+   fbankinterfaceid     varchar(50) comment '银企接口id',
+   fsyncstatus          int         comment '同步状态',
+   fsyncstatusmsg       varchar(50) comment '同步状态结果返回信息',
+   fsharetype           int         comment '账户使用权限类型',
+   fdescription         varchar(50) comment '描述',
+   fcreator             date comment '创建人',
+   fcreatetime          date comment '创建时间',
+   flastudpateuser      varchar(50) comment '最后更新人',
+   flastupdatetime      varchar(50) comment '最后更新时间',
    primary key (fid)
-);
+) ENGINE=INNODB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 alter table T_BD_accountbank comment '银行账户';
 
@@ -84,8 +84,8 @@ create table T_BD_customer
    fname                varchar(100) not null comment '用户名称',
    fnumber              varchar(50) not null comment '用户编码',
    fshopid              varchar(50) comment '所属店铺',
-   fgender              int comment '性别',
-   fbirthday            date comment '出生日期',
+   fgender              int         comment '性别',
+   fbirthday            date        comment '出生日期',
    femai                varchar(50) comment '邮箱',
    fstate               int comment '状态',
    fhomephone           varchar(50) comment '家庭电话',
@@ -102,7 +102,7 @@ create table T_BD_customer
    flastupdateuser      varchar(50) comment '最后更新人',
    flastupdatetime      date comment '最后更新时间',
    primary key (fid)
-);
+) ENGINE=INNODB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 alter table T_BD_customer comment '客户';
 
@@ -116,7 +116,7 @@ create table T_BD_customerpossession
    fpossessionid        varchar(50) not null comment '财产id',
    fnum                 int comment '数量',
    primary key (fid)
-);
+) ENGINE=INNODB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 alter table T_BD_customerpossession comment '顾客财产';
 
@@ -130,7 +130,7 @@ create table T_BD_possession
    fnumber              varchar(100) not null comment '财产编码',
    fstatus              int comment '状态',
    primary key (fid)
-);
+) ENGINE=INNODB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 alter table T_BD_possession comment '财产';
 
@@ -143,7 +143,7 @@ create table T_BD_product
    fname                varchar(100) not null comment '商品名称',
    fnumber              varchar(100) not null comment '商品编码',
    primary key (fid)
-);
+) ENGINE=INNODB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 alter table T_BD_product comment '商品';
 
@@ -175,7 +175,7 @@ create table T_BD_shop
    flastupdateuser      varchar(50) comment '最后更新人',
    flastupdatetime      date comment '最后更新时间',
    primary key (fid)
-);
+) ENGINE=INNODB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 alter table T_BD_shop comment '店铺,具体的一个个商家';
 
@@ -189,7 +189,7 @@ create table T_BD_shopcustomer
    fcustomerid          varchar(50) not null comment '顾客id',
    fstatus              int comment '状态',
    primary key (fid)
-);
+) ENGINE=INNODB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 alter table T_BD_shopcustomer comment '店铺和用户的所属关系表';
 
@@ -202,7 +202,7 @@ create table T_BD_supplier
    fname                varchar(100) not null comment '供应商名称',
    fnumber              varchar(50) not null comment '供应商编码',
    primary key (fid)
-);
+) ENGINE=INNODB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 alter table T_BD_supplier comment '供应商';
 
@@ -211,13 +211,13 @@ alter table T_BD_supplier comment '供应商';
 /*==============================================================*/
 create table T_BD_supplierproduct
 (
-   fid                  char(10) not null comment 'uuid',
-   fsupplierid          char(10) not null comment '供应商id',
-   fproductid           char(10) not null comment '产品id',
-   fnum                 char(10) comment '数量',
-   fprice               char(10) comment '价格',
+   fid                  varchar(50) not null comment 'uuid',
+   fsupplierid          varchar(50) not null comment '供应商id',
+   fproductid           varchar(50) not null comment '产品id',
+   fnum                 int comment '数量',
+   fprice               decimal(18, 2) comment '价格',
    primary key (fid)
-);
+) ENGINE=INNODB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 alter table T_BD_supplierproduct comment '供应商拥有的商品';
 
