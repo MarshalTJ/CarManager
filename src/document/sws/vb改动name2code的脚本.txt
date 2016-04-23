@@ -1,0 +1,6 @@
+.vbscript(%Name%)
+  ScriptResult=getpy(ScriptInputArray(0))
+  function getpy(str) 
+      getpy= "f" &  str
+  end function 
+.endvbscript
