@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.carmanager.webapp.permission.dao.UserDao" >
+  <resultMap id="BaseResultMap" type="com.carmanager.webapp.permission.bean.User" >
+    <id column="fid" property="id" jdbcType="VARCHAR" />
+    <result column="fname" property="name" jdbcType="VARCHAR" />
+    <result column="fnumber" property="number" jdbcType="VARCHAR" />
+    <result column="ftype" property="type" jdbcType="INTEGER" />
+    <result column="fpassword" property="password" jdbcType="VARCHAR" />
+    <result column="fisLocked" property="islocked" jdbcType="INTEGER" />
+    <result column="fisforbidden" property="isforbidden" jdbcType="INTEGER" />
+    <result column="ferrCount" property="errcount" jdbcType="INTEGER" />
+    <result column="fstaff" property="staff" jdbcType="VARCHAR" />
+    <result column="flockedtime" property="lockedtime" jdbcType="DATE" />
+    <result column="fdescription" property="description" jdbcType="VARCHAR" />
+    <result column="fcreator" property="creator" jdbcType="VARCHAR" />
+    <result column="fcreattime" property="creattime" jdbcType="DATE" />
+    <result column="flastupdateuser" property="lastupdateuser" jdbcType="VARCHAR" />
+    <result column="flastupdatetime" property="lastupdatetime" jdbcType="DATE" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    fid, fname, fnumber, ftype, fpassword, fisLocked, fisforbidden, ferrCount, fstaff, 
+    flockedtime, fdescription, fcreator, fcreattime, flastupdateuser, flastupdatetime
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_pm_user
+    where fid = #{id,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from t_pm_user
+    where fid = #{id,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.carmanager.webapp.permission.bean.User" >
+    insert into t_pm_user (fid, fname, fnumber, 
+      ftype, fpassword, fisLocked, 
+      fisforbidden, ferrCount, fstaff, 
+      flockedtime, fdescription, fcreator, 
+      fcreattime, flastupdateuser, flastupdatetime
+      )
+    values (#{id,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, #{number,jdbcType=VARCHAR}, 
+      #{type,jdbcType=INTEGER}, #{password,jdbcType=VARCHAR}, #{islocked,jdbcType=INTEGER}, 
+      #{isforbidden,jdbcType=INTEGER}, #{errcount,jdbcType=INTEGER}, #{staff,jdbcType=VARCHAR}, 
+      #{lockedtime,jdbcType=DATE}, #{description,jdbcType=VARCHAR}, #{creator,jdbcType=VARCHAR}, 
+      #{creattime,jdbcType=DATE}, #{lastupdateuser,jdbcType=VARCHAR}, #{lastupdatetime,jdbcType=DATE}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.carmanager.webapp.permission.bean.User" >
+    insert into t_pm_user
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        fid,
+      </if>
+      <if test="name != null" >
+        fname,
+      </if>
+      <if test="number != null" >
+        fnumber,
+      </if>
+      <if test="type != null" >
+        ftype,
+      </if>
+      <if test="password != null" >
+        fpassword,
+      </if>
+      <if test="islocked != null" >
+        fisLocked,
+      </if>
+      <if test="isforbidden != null" >
+        fisforbidden,
+      </if>
+      <if test="errcount != null" >
+        ferrCount,
+      </if>
+      <if test="staff != null" >
+        fstaff,
+      </if>
+      <if test="lockedtime != null" >
+        flockedtime,
+      </if>
+      <if test="description != null" >
+        fdescription,
+      </if>
+      <if test="creator != null" >
+        fcreator,
+      </if>
+      <if test="creattime != null" >
+        fcreattime,
+      </if>
+      <if test="lastupdateuser != null" >
+        flastupdateuser,
+      </if>
+      <if test="lastupdatetime != null" >
+        flastupdatetime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null" >
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="number != null" >
+        #{number,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null" >
+        #{type,jdbcType=INTEGER},
+      </if>
+      <if test="password != null" >
+        #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="islocked != null" >
+        #{islocked,jdbcType=INTEGER},
+      </if>
+      <if test="isforbidden != null" >
+        #{isforbidden,jdbcType=INTEGER},
+      </if>
+      <if test="errcount != null" >
+        #{errcount,jdbcType=INTEGER},
+      </if>
+      <if test="staff != null" >
+        #{staff,jdbcType=VARCHAR},
+      </if>
+      <if test="lockedtime != null" >
+        #{lockedtime,jdbcType=DATE},
+      </if>
+      <if test="description != null" >
+        #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="creator != null" >
+        #{creator,jdbcType=VARCHAR},
+      </if>
+      <if test="creattime != null" >
+        #{creattime,jdbcType=DATE},
+      </if>
+      <if test="lastupdateuser != null" >
+        #{lastupdateuser,jdbcType=VARCHAR},
+      </if>
+      <if test="lastupdatetime != null" >
+        #{lastupdatetime,jdbcType=DATE},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.carmanager.webapp.permission.bean.User" >
+    update t_pm_user
+    <set >
+      <if test="name != null" >
+        fname = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="number != null" >
+        fnumber = #{number,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null" >
+        ftype = #{type,jdbcType=INTEGER},
+      </if>
+      <if test="password != null" >
+        fpassword = #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="islocked != null" >
+        fisLocked = #{islocked,jdbcType=INTEGER},
+      </if>
+      <if test="isforbidden != null" >
+        fisforbidden = #{isforbidden,jdbcType=INTEGER},
+      </if>
+      <if test="errcount != null" >
+        ferrCount = #{errcount,jdbcType=INTEGER},
+      </if>
+      <if test="staff != null" >
+        fstaff = #{staff,jdbcType=VARCHAR},
+      </if>
+      <if test="lockedtime != null" >
+        flockedtime = #{lockedtime,jdbcType=DATE},
+      </if>
+      <if test="description != null" >
+        fdescription = #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="creator != null" >
+        fcreator = #{creator,jdbcType=VARCHAR},
+      </if>
+      <if test="creattime != null" >
+        fcreattime = #{creattime,jdbcType=DATE},
+      </if>
+      <if test="lastupdateuser != null" >
+        flastupdateuser = #{lastupdateuser,jdbcType=VARCHAR},
+      </if>
+      <if test="lastupdatetime != null" >
+        flastupdatetime = #{lastupdatetime,jdbcType=DATE},
+      </if>
+    </set>
+    where fid = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.carmanager.webapp.permission.bean.User" >
+    update t_pm_user
+    set fname = #{name,jdbcType=VARCHAR},
+      fnumber = #{number,jdbcType=VARCHAR},
+      ftype = #{type,jdbcType=INTEGER},
+      fpassword = #{password,jdbcType=VARCHAR},
+      fisLocked = #{islocked,jdbcType=INTEGER},
+      fisforbidden = #{isforbidden,jdbcType=INTEGER},
+      ferrCount = #{errcount,jdbcType=INTEGER},
+      fstaff = #{staff,jdbcType=VARCHAR},
+      flockedtime = #{lockedtime,jdbcType=DATE},
+      fdescription = #{description,jdbcType=VARCHAR},
+      fcreator = #{creator,jdbcType=VARCHAR},
+      fcreattime = #{creattime,jdbcType=DATE},
+      flastupdateuser = #{lastupdateuser,jdbcType=VARCHAR},
+      flastupdatetime = #{lastupdatetime,jdbcType=DATE}
+    where fid = #{id,jdbcType=VARCHAR}
+  </update>
+</mapper>

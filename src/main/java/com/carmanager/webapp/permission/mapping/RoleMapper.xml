@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.carmanager.webapp.permission.dao.RoleDao" >
+  <resultMap id="BaseResultMap" type="com.carmanager.webapp.permission.bean.Role" >
+    <id column="fid" property="id" jdbcType="VARCHAR" />
+    <result column="fname" property="name" jdbcType="VARCHAR" />
+    <result column="fnumber" property="number" jdbcType="VARCHAR" />
+    <result column="fshopid" property="shopid" jdbcType="VARCHAR" />
+    <result column="fdescription" property="description" jdbcType="VARCHAR" />
+    <result column="fcreator" property="creator" jdbcType="VARCHAR" />
+    <result column="fcreatetime" property="createtime" jdbcType="VARCHAR" />
+    <result column="flastupdateuser" property="lastupdateuser" jdbcType="VARCHAR" />
+    <result column="flastupdatetime" property="lastupdatetime" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    fid, fname, fnumber, fshopid, fdescription, fcreator, fcreatetime, flastupdateuser, 
+    flastupdatetime
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_pm_role
+    where fid = #{id,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from t_pm_role
+    where fid = #{id,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.carmanager.webapp.permission.bean.Role" >
+    insert into t_pm_role (fid, fname, fnumber, 
+      fshopid, fdescription, fcreator, 
+      fcreatetime, flastupdateuser, flastupdatetime
+      )
+    values (#{id,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, #{number,jdbcType=VARCHAR}, 
+      #{shopid,jdbcType=VARCHAR}, #{description,jdbcType=VARCHAR}, #{creator,jdbcType=VARCHAR}, 
+      #{createtime,jdbcType=VARCHAR}, #{lastupdateuser,jdbcType=VARCHAR}, #{lastupdatetime,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.carmanager.webapp.permission.bean.Role" >
+    insert into t_pm_role
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        fid,
+      </if>
+      <if test="name != null" >
+        fname,
+      </if>
+      <if test="number != null" >
+        fnumber,
+      </if>
+      <if test="shopid != null" >
+        fshopid,
+      </if>
+      <if test="description != null" >
+        fdescription,
+      </if>
+      <if test="creator != null" >
+        fcreator,
+      </if>
+      <if test="createtime != null" >
+        fcreatetime,
+      </if>
+      <if test="lastupdateuser != null" >
+        flastupdateuser,
+      </if>
+      <if test="lastupdatetime != null" >
+        flastupdatetime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null" >
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="number != null" >
+        #{number,jdbcType=VARCHAR},
+      </if>
+      <if test="shopid != null" >
+        #{shopid,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null" >
+        #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="creator != null" >
+        #{creator,jdbcType=VARCHAR},
+      </if>
+      <if test="createtime != null" >
+        #{createtime,jdbcType=VARCHAR},
+      </if>
+      <if test="lastupdateuser != null" >
+        #{lastupdateuser,jdbcType=VARCHAR},
+      </if>
+      <if test="lastupdatetime != null" >
+        #{lastupdatetime,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.carmanager.webapp.permission.bean.Role" >
+    update t_pm_role
+    <set >
+      <if test="name != null" >
+        fname = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="number != null" >
+        fnumber = #{number,jdbcType=VARCHAR},
+      </if>
+      <if test="shopid != null" >
+        fshopid = #{shopid,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null" >
+        fdescription = #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="creator != null" >
+        fcreator = #{creator,jdbcType=VARCHAR},
+      </if>
+      <if test="createtime != null" >
+        fcreatetime = #{createtime,jdbcType=VARCHAR},
+      </if>
+      <if test="lastupdateuser != null" >
+        flastupdateuser = #{lastupdateuser,jdbcType=VARCHAR},
+      </if>
+      <if test="lastupdatetime != null" >
+        flastupdatetime = #{lastupdatetime,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where fid = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.carmanager.webapp.permission.bean.Role" >
+    update t_pm_role
+    set fname = #{name,jdbcType=VARCHAR},
+      fnumber = #{number,jdbcType=VARCHAR},
+      fshopid = #{shopid,jdbcType=VARCHAR},
+      fdescription = #{description,jdbcType=VARCHAR},
+      fcreator = #{creator,jdbcType=VARCHAR},
+      fcreatetime = #{createtime,jdbcType=VARCHAR},
+      flastupdateuser = #{lastupdateuser,jdbcType=VARCHAR},
+      flastupdatetime = #{lastupdatetime,jdbcType=VARCHAR}
+    where fid = #{id,jdbcType=VARCHAR}
+  </update>
+</mapper>

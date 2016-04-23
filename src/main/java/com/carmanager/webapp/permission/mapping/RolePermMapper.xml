@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.carmanager.webapp.permission.dao.RolePermDao" >
+  <resultMap id="BaseResultMap" type="com.carmanager.webapp.permission.bean.RolePerm" >
+    <id column="fid" property="id" jdbcType="VARCHAR" />
+    <result column="froleid" property="roleid" jdbcType="VARCHAR" />
+    <result column="fpermid" property="permid" jdbcType="VARCHAR" />
+    <result column="fpermtype" property="permtype" jdbcType="INTEGER" />
+    <result column="fruleexpr" property="ruleexpr" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    fid, froleid, fpermid, fpermtype, fruleexpr
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_pm_roleperm
+    where fid = #{id,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from t_pm_roleperm
+    where fid = #{id,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.carmanager.webapp.permission.bean.RolePerm" >
+    insert into t_pm_roleperm (fid, froleid, fpermid, 
+      fpermtype, fruleexpr)
+    values (#{id,jdbcType=VARCHAR}, #{roleid,jdbcType=VARCHAR}, #{permid,jdbcType=VARCHAR}, 
+      #{permtype,jdbcType=INTEGER}, #{ruleexpr,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.carmanager.webapp.permission.bean.RolePerm" >
+    insert into t_pm_roleperm
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        fid,
+      </if>
+      <if test="roleid != null" >
+        froleid,
+      </if>
+      <if test="permid != null" >
+        fpermid,
+      </if>
+      <if test="permtype != null" >
+        fpermtype,
+      </if>
+      <if test="ruleexpr != null" >
+        fruleexpr,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="roleid != null" >
+        #{roleid,jdbcType=VARCHAR},
+      </if>
+      <if test="permid != null" >
+        #{permid,jdbcType=VARCHAR},
+      </if>
+      <if test="permtype != null" >
+        #{permtype,jdbcType=INTEGER},
+      </if>
+      <if test="ruleexpr != null" >
+        #{ruleexpr,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.carmanager.webapp.permission.bean.RolePerm" >
+    update t_pm_roleperm
+    <set >
+      <if test="roleid != null" >
+        froleid = #{roleid,jdbcType=VARCHAR},
+      </if>
+      <if test="permid != null" >
+        fpermid = #{permid,jdbcType=VARCHAR},
+      </if>
+      <if test="permtype != null" >
+        fpermtype = #{permtype,jdbcType=INTEGER},
+      </if>
+      <if test="ruleexpr != null" >
+        fruleexpr = #{ruleexpr,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where fid = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.carmanager.webapp.permission.bean.RolePerm" >
+    update t_pm_roleperm
+    set froleid = #{roleid,jdbcType=VARCHAR},
+      fpermid = #{permid,jdbcType=VARCHAR},
+      fpermtype = #{permtype,jdbcType=INTEGER},
+      fruleexpr = #{ruleexpr,jdbcType=VARCHAR}
+    where fid = #{id,jdbcType=VARCHAR}
+  </update>
+</mapper>

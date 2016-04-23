@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.carmanager.webapp.permission.dao.PermItemDao" >
+  <resultMap id="BaseResultMap" type="com.carmanager.webapp.permission.bean.PermItem" >
+    <id column="fid" property="id" jdbcType="VARCHAR" />
+    <result column="fname" property="name" jdbcType="VARCHAR" />
+    <result column="fnumber" property="number" jdbcType="VARCHAR" />
+    <result column="fui" property="ui" jdbcType="VARCHAR" />
+    <result column="flongnumber" property="longnumber" jdbcType="VARCHAR" />
+    <result column="fparentid" property="parentid" jdbcType="VARCHAR" />
+    <result column="fisleaf" property="isleaf" jdbcType="INTEGER" />
+    <result column="fdescription" property="description" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    fid, fname, fnumber, fui, flongnumber, fparentid, fisleaf, fdescription
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_pm_permitem
+    where fid = #{id,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from t_pm_permitem
+    where fid = #{id,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.carmanager.webapp.permission.bean.PermItem" >
+    insert into t_pm_permitem (fid, fname, fnumber, 
+      fui, flongnumber, fparentid, 
+      fisleaf, fdescription)
+    values (#{id,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, #{number,jdbcType=VARCHAR}, 
+      #{ui,jdbcType=VARCHAR}, #{longnumber,jdbcType=VARCHAR}, #{parentid,jdbcType=VARCHAR}, 
+      #{isleaf,jdbcType=INTEGER}, #{description,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.carmanager.webapp.permission.bean.PermItem" >
+    insert into t_pm_permitem
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        fid,
+      </if>
+      <if test="name != null" >
+        fname,
+      </if>
+      <if test="number != null" >
+        fnumber,
+      </if>
+      <if test="ui != null" >
+        fui,
+      </if>
+      <if test="longnumber != null" >
+        flongnumber,
+      </if>
+      <if test="parentid != null" >
+        fparentid,
+      </if>
+      <if test="isleaf != null" >
+        fisleaf,
+      </if>
+      <if test="description != null" >
+        fdescription,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null" >
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="number != null" >
+        #{number,jdbcType=VARCHAR},
+      </if>
+      <if test="ui != null" >
+        #{ui,jdbcType=VARCHAR},
+      </if>
+      <if test="longnumber != null" >
+        #{longnumber,jdbcType=VARCHAR},
+      </if>
+      <if test="parentid != null" >
+        #{parentid,jdbcType=VARCHAR},
+      </if>
+      <if test="isleaf != null" >
+        #{isleaf,jdbcType=INTEGER},
+      </if>
+      <if test="description != null" >
+        #{description,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.carmanager.webapp.permission.bean.PermItem" >
+    update t_pm_permitem
+    <set >
+      <if test="name != null" >
+        fname = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="number != null" >
+        fnumber = #{number,jdbcType=VARCHAR},
+      </if>
+      <if test="ui != null" >
+        fui = #{ui,jdbcType=VARCHAR},
+      </if>
+      <if test="longnumber != null" >
+        flongnumber = #{longnumber,jdbcType=VARCHAR},
+      </if>
+      <if test="parentid != null" >
+        fparentid = #{parentid,jdbcType=VARCHAR},
+      </if>
+      <if test="isleaf != null" >
+        fisleaf = #{isleaf,jdbcType=INTEGER},
+      </if>
+      <if test="description != null" >
+        fdescription = #{description,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where fid = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.carmanager.webapp.permission.bean.PermItem" >
+    update t_pm_permitem
+    set fname = #{name,jdbcType=VARCHAR},
+      fnumber = #{number,jdbcType=VARCHAR},
+      fui = #{ui,jdbcType=VARCHAR},
+      flongnumber = #{longnumber,jdbcType=VARCHAR},
+      fparentid = #{parentid,jdbcType=VARCHAR},
+      fisleaf = #{isleaf,jdbcType=INTEGER},
+      fdescription = #{description,jdbcType=VARCHAR}
+    where fid = #{id,jdbcType=VARCHAR}
+  </update>
+</mapper>

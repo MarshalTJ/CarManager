@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.carmanager.webapp.permission.dao.userroleMapper" >
+  <resultMap id="BaseResultMap" type="com.carmanager.webapp.permission.bean.userrole" >
+    <id column="fid" property="id" jdbcType="VARCHAR" />
+    <result column="froleid" property="roleid" jdbcType="VARCHAR" />
+    <result column="fuserid" property="userid" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    fid, froleid, fuserid
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_pm_userrole
+    where fid = #{id,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from t_pm_userrole
+    where fid = #{id,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.carmanager.webapp.permission.bean.userrole" >
+    insert into t_pm_userrole (fid, froleid, fuserid
+      )
+    values (#{id,jdbcType=VARCHAR}, #{roleid,jdbcType=VARCHAR}, #{userid,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.carmanager.webapp.permission.bean.userrole" >
+    insert into t_pm_userrole
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        fid,
+      </if>
+      <if test="roleid != null" >
+        froleid,
+      </if>
+      <if test="userid != null" >
+        fuserid,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="roleid != null" >
+        #{roleid,jdbcType=VARCHAR},
+      </if>
+      <if test="userid != null" >
+        #{userid,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.carmanager.webapp.permission.bean.userrole" >
+    update t_pm_userrole
+    <set >
+      <if test="roleid != null" >
+        froleid = #{roleid,jdbcType=VARCHAR},
+      </if>
+      <if test="userid != null" >
+        fuserid = #{userid,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where fid = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.carmanager.webapp.permission.bean.userrole" >
+    update t_pm_userrole
+    set froleid = #{roleid,jdbcType=VARCHAR},
+      fuserid = #{userid,jdbcType=VARCHAR}
+    where fid = #{id,jdbcType=VARCHAR}
+  </update>
+</mapper>
