@@ -1,0 +1,3 @@
+权限模块创表脚本：permission.sql
+
+基础数据模块创表脚本：basedata.sql
