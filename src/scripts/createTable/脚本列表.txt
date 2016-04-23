@@ -1,3 +1,5 @@
 权限模块创表脚本：permission.sql
 
 基础数据模块创表脚本：basedata.sql
+
+初始化数据脚本：1.测试用脚本 testInitData.sql
