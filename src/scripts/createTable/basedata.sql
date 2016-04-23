@@ -88,136 +88,136 @@ create table T_BD_accountbank
 );
 
 comment on table T_BD_accountbank is 
-'ÒøĞĞÕË»§';
+'é“¶è¡Œè´¦æˆ·';
 
-comment on column T_BD_accountbank.fid is 
+comment on column T_BD_accountbank.fid is
 'uuid';
 
-comment on column T_BD_accountbank.fname is 
-'Ãû³Æ';
+comment on column T_BD_accountbank.fname is
+'åç§°';
 
-comment on column T_BD_accountbank.fnumber is 
-'±àÂë';
+comment on column T_BD_accountbank.fnumber is
+'ç¼–ç ';
 
-comment on column T_BD_accountbank.fbankaccount is 
-'ÒøĞĞÕËºÅ';
+comment on column T_BD_accountbank.fbankaccount is
+'é“¶è¡Œè´¦å·';
 
-comment on column T_BD_accountbank.fshopid is 
-'¿ª»§µêÆÌ';
+comment on column T_BD_accountbank.fshopid is
+'å¼€æˆ·åº—é“º';
 
-comment on column T_BD_accountbank.fisclosed is 
-'ÊÇ·ñÏú»§';
+comment on column T_BD_accountbank.fisclosed is
+'æ˜¯å¦é”€æˆ·';
 
-comment on column T_BD_accountbank.fopendate is 
-'¿ª»§ÈÕÆÚ';
+comment on column T_BD_accountbank.fopendate is
+'å¼€æˆ·æ—¥æœŸ';
 
-comment on column T_BD_accountbank.fclosedate is 
-'Ïú»§ÈÕÆÚ';
+comment on column T_BD_accountbank.fclosedate is
+'é”€æˆ·æ—¥æœŸ';
 
-comment on column T_BD_accountbank.fbank is 
-'ÒøĞĞ»ú¹¹';
+comment on column T_BD_accountbank.fbank is
+'é“¶è¡Œæœºæ„';
 
-comment on column T_BD_accountbank.fphonenumber is 
-'µç»°ºÅÂë';
+comment on column T_BD_accountbank.fphonenumber is
+'ç”µè¯å·ç ';
 
-comment on column T_BD_accountbank.fissetbankinterface is 
-'ÊÇ·ñÉèÖÃÒøĞĞ½Ó¿Ú';
+comment on column T_BD_accountbank.fissetbankinterface is
+'æ˜¯å¦è®¾ç½®é“¶è¡Œæ¥å£';
 
-comment on column T_BD_accountbank.fbanktype is 
-'ÒøĞĞÀàĞÍ';
+comment on column T_BD_accountbank.fbanktype is
+'é“¶è¡Œç±»å‹';
 
-comment on column T_BD_accountbank.finneraccount is 
-'¶ÔÓ¦ÄÚ²¿ÕËºÅ';
+comment on column T_BD_accountbank.finneraccount is
+'å¯¹åº”å†…éƒ¨è´¦å·';
 
-comment on column T_BD_accountbank.fctrlstrategy is 
-'¹ÜÀí²ßÂÔ';
+comment on column T_BD_accountbank.fctrlstrategy is
+'ç®¡ç†ç­–ç•¥';
 
-comment on column T_BD_accountbank.fclassification is 
-'¼ÇÕË·ÖÀà';
+comment on column T_BD_accountbank.fclassification is
+'è®°è´¦åˆ†ç±»';
 
-comment on column T_BD_accountbank.fismotheraccount is 
-'ÊÇ·ñÄ¸ÕËºÅ';
+comment on column T_BD_accountbank.fismotheraccount is
+'æ˜¯å¦æ¯è´¦å·';
 
-comment on column T_BD_accountbank.faccounttype is 
-'ÕË»§ĞÔÖÊ';
+comment on column T_BD_accountbank.faccounttype is
+'è´¦æˆ·æ€§è´¨';
 
-comment on column T_BD_accountbank.fnotoutpay is 
-'ÊÕ·ñ²»ÔÊĞí¶ÔÍâÖ§¸¶';
+comment on column T_BD_accountbank.fnotoutpay is
+'æ”¶å¦ä¸å…è®¸å¯¹å¤–æ”¯ä»˜';
 
-comment on column T_BD_accountbank.fsubaccount is 
-'Ä¸ÕËºÅ';
+comment on column T_BD_accountbank.fsubaccount is
+'æ¯è´¦å·';
 
-comment on column T_BD_accountbank.fisbank is 
-'ÊÇ·ñÒøĞĞ¿ÆÄ¿';
+comment on column T_BD_accountbank.fisbank is
+'æ˜¯å¦é“¶è¡Œç§‘ç›®';
 
-comment on column T_BD_accountbank.fiscash is 
-'ÊÇ·ñÏÖ½ğ¿ÆÄ¿';
+comment on column T_BD_accountbank.fiscash is
+'æ˜¯å¦ç°é‡‘ç§‘ç›®';
 
-comment on column T_BD_accountbank.facctname is 
-'ÕË»§Ãû³Æ';
+comment on column T_BD_accountbank.facctname is
+'è´¦æˆ·åç§°';
 
-comment on column T_BD_accountbank.frelemotheracct is 
-'¶ÔÓ¦Ä¸ÕËºÅ';
+comment on column T_BD_accountbank.frelemotheracct is
+'å¯¹åº”æ¯è´¦å·';
 
-comment on column T_BD_accountbank.fisdcpay is 
-'ÊÇ·ñ¶¨Ïò»®×ª';
+comment on column T_BD_accountbank.fisdcpay is
+'æ˜¯å¦å®šå‘åˆ’è½¬';
 
-comment on column T_BD_accountbank.fisreckoning is 
-'ÊÇ·ñÇåËã»§';
+comment on column T_BD_accountbank.fisreckoning is
+'æ˜¯å¦æ¸…ç®—æˆ·';
 
-comment on column T_BD_accountbank.fsimplecode is 
-'Öú¼ÇÂë';
+comment on column T_BD_accountbank.fsimplecode is
+'åŠ©è®°ç ';
 
-comment on column T_BD_accountbank.fagencyshop is 
-'´úÀí¸¶¿îµêÆÌ';
+comment on column T_BD_accountbank.fagencyshop is
+'ä»£ç†ä»˜æ¬¾åº—é“º';
 
-comment on column T_BD_accountbank.fmaxpayamount is 
-'Ö§¸¶ÏŞ¶î';
+comment on column T_BD_accountbank.fmaxpayamount is
+'æ”¯ä»˜é™é¢';
 
-comment on column T_BD_accountbank.fapplybillid is 
-'ÉêÇëµ¥id';
+comment on column T_BD_accountbank.fapplybillid is
+'ç”³è¯·å•id';
 
-comment on column T_BD_accountbank.fbankversion is 
-'ÒøĞĞ°æ±¾';
+comment on column T_BD_accountbank.fbankversion is
+'é“¶è¡Œç‰ˆæœ¬';
 
-comment on column T_BD_accountbank.fbankcert is 
-'ÒøĞĞÖ¤Êé';
+comment on column T_BD_accountbank.fbankcert is
+'é“¶è¡Œè¯ä¹¦';
 
-comment on column T_BD_accountbank.freference is 
-'²Î¿¼ĞÅÏ¢';
+comment on column T_BD_accountbank.freference is
+'å‚è€ƒä¿¡æ¯';
 
-comment on column T_BD_accountbank.fcountry is 
-'¹ú¼Ò';
+comment on column T_BD_accountbank.fcountry is
+'å›½å®¶';
 
-comment on column T_BD_accountbank.fbankinterface is 
-'ÒøÆó½Ó¿ÚĞÅÏ¢';
+comment on column T_BD_accountbank.fbankinterface is
+'é“¶ä¼æ¥å£ä¿¡æ¯';
 
-comment on column T_BD_accountbank.fbankinterfaceid is 
-'ÒøÆó½Ó¿Úid';
+comment on column T_BD_accountbank.fbankinterfaceid is
+'é“¶ä¼æ¥å£id';
 
-comment on column T_BD_accountbank.fsyncstatus is 
-'Í¬²½×´Ì¬';
+comment on column T_BD_accountbank.fsyncstatus is
+'åŒæ­¥çŠ¶æ€';
 
-comment on column T_BD_accountbank.fsyncstatusmsg is 
-'Í¬²½×´Ì¬½á¹û·µ»ØĞÅÏ¢';
+comment on column T_BD_accountbank.fsyncstatusmsg is
+'åŒæ­¥çŠ¶æ€ç»“æœè¿”å›ä¿¡æ¯';
 
-comment on column T_BD_accountbank.fsharetype is 
-'ÕË»§Ê¹ÓÃÈ¨ÏŞÀàĞÍ';
+comment on column T_BD_accountbank.fsharetype is
+'è´¦æˆ·ä½¿ç”¨æƒé™ç±»å‹';
 
-comment on column T_BD_accountbank.fdescription is 
-'ÃèÊö';
+comment on column T_BD_accountbank.fdescription is
+'æè¿°';
 
-comment on column T_BD_accountbank.fcreator is 
-'´´½¨ÈË';
+comment on column T_BD_accountbank.fcreator is
+'åˆ›å»ºäºº';
 
-comment on column T_BD_accountbank.fcreatetime is 
-'´´½¨Ê±¼ä';
+comment on column T_BD_accountbank.fcreatetime is
+'åˆ›å»ºæ—¶é—´';
 
-comment on column T_BD_accountbank.flastudpateuser is 
-'×îºó¸üĞÂÈË';
+comment on column T_BD_accountbank.flastudpateuser is
+'æœ€åæ›´æ–°äºº';
 
-comment on column T_BD_accountbank.flastupdatetime is 
-'×îºó¸üĞÂÊ±¼ä';
+comment on column T_BD_accountbank.flastupdatetime is
+'æœ€åæ›´æ–°æ—¶é—´';
 
 /*==============================================================*/
 /* Index: T_BD_accountbank_PK                                   */
@@ -229,7 +229,7 @@ fid ASC
 /*==============================================================*/
 /* Table: T_BD_customer                                         */
 /*==============================================================*/
-create table T_BD_customer 
+create table T_BD_customer
 (
    fid                  varchar(50)                    not null,
    fname                varchar(100)                   not null,
@@ -259,83 +259,83 @@ create table T_BD_customer
    constraint PK_T_BD_CUSTOMER primary key (fid)
 );
 
-comment on table T_BD_customer is 
-'¿Í»§';
+comment on table T_BD_customer is
+'å®¢æˆ·';
 
-comment on column T_BD_customer.fid is 
+comment on column T_BD_customer.fid is
 'UUID';
 
-comment on column T_BD_customer.fname is 
-'ÓÃ»§Ãû³Æ';
+comment on column T_BD_customer.fname is
+'ç”¨æˆ·åç§°';
 
-comment on column T_BD_customer.fnumber is 
-'ÓÃ»§±àÂë';
+comment on column T_BD_customer.fnumber is
+'ç”¨æˆ·ç¼–ç ';
 
-comment on column T_BD_customer.fopenid is 
-'Î¢ĞÅµÄopenid';
+comment on column T_BD_customer.fopenid is
+'å¾®ä¿¡çš„openid';
 
-comment on column T_BD_customer.fheadportrait is 
-'Î¢ĞÅÍ·Ïñ';
+comment on column T_BD_customer.fheadportrait is
+'å¾®ä¿¡å¤´åƒ';
 
-comment on column T_BD_customer.fissubsciber is 
-'ÊÇ·ñ¹Ø×¢Í·Ïñ';
+comment on column T_BD_customer.fissubsciber is
+'æ˜¯å¦å…³æ³¨å¤´åƒ';
 
-comment on column T_BD_customer.fbindcode is 
-'°ó¶¨Âë';
+comment on column T_BD_customer.fbindcode is
+'ç»‘å®šç ';
 
-comment on column T_BD_customer.fshopid is 
-'ËùÊôµêÆÌ';
+comment on column T_BD_customer.fshopid is
+'æ‰€å±åº—é“º';
 
-comment on column T_BD_customer.fgender is 
-'ĞÔ±ğ';
+comment on column T_BD_customer.fgender is
+'æ€§åˆ«';
 
-comment on column T_BD_customer.fbirthday is 
-'³öÉúÈÕÆÚ';
+comment on column T_BD_customer.fbirthday is
+'å‡ºç”Ÿæ—¥æœŸ';
 
-comment on column T_BD_customer.femai is 
-'ÓÊÏä';
+comment on column T_BD_customer.femai is
+'é‚®ç®±';
 
-comment on column T_BD_customer.fstate is 
-'×´Ì¬';
+comment on column T_BD_customer.fstate is
+'çŠ¶æ€';
 
-comment on column T_BD_customer.fhomephone is 
-'¼ÒÍ¥µç»°';
+comment on column T_BD_customer.fhomephone is
+'å®¶åº­ç”µè¯';
 
-comment on column T_BD_customer.fofficephone is 
-'°ì¹«µç»°';
+comment on column T_BD_customer.fofficephone is
+'åŠå…¬ç”µè¯';
 
-comment on column T_BD_customer.fcell is 
-'ÊÖ»úºÅÂë';
+comment on column T_BD_customer.fcell is
+'æ‰‹æœºå·ç ';
 
-comment on column T_BD_customer.fidcard is 
-'Éí·İÖ¤';
+comment on column T_BD_customer.fidcard is
+'èº«ä»½è¯';
 
-comment on column T_BD_customer.fheight is 
-'Éí¸ß';
+comment on column T_BD_customer.fheight is
+'èº«é«˜';
 
-comment on column T_BD_customer.fnativeplace is 
-'¼®¹á';
+comment on column T_BD_customer.fnativeplace is
+'ç±è´¯';
 
-comment on column T_BD_customer.fbloodtype is 
-'ÑªĞÍ';
+comment on column T_BD_customer.fbloodtype is
+'è¡€å‹';
 
-comment on column T_BD_customer.ffolk is 
-'Ãñ×å';
+comment on column T_BD_customer.ffolk is
+'æ°‘æ—';
 
-comment on column T_BD_customer.fdescription is 
-'ÃèĞğ';
+comment on column T_BD_customer.fdescription is
+'æå™';
 
-comment on column T_BD_customer.fcreator is 
-'´´½¨Õß';
+comment on column T_BD_customer.fcreator is
+'åˆ›å»ºè€…';
 
-comment on column T_BD_customer.fcreatetime is 
-'´´½¨Ê±¼ä';
+comment on column T_BD_customer.fcreatetime is
+'åˆ›å»ºæ—¶é—´';
 
-comment on column T_BD_customer.flastupdateuser is 
-'×îºó¸üĞÂÈË';
+comment on column T_BD_customer.flastupdateuser is
+'æœ€åæ›´æ–°äºº';
 
-comment on column T_BD_customer.flastupdatetime is 
-'×îºó¸üĞÂÊ±¼ä';
+comment on column T_BD_customer.flastupdatetime is
+'æœ€åæ›´æ–°æ—¶é—´';
 
 /*==============================================================*/
 /* Index: T_BD_customer_PK                                      */
@@ -347,7 +347,7 @@ fid ASC
 /*==============================================================*/
 /* Table: T_BD_customerpossession                               */
 /*==============================================================*/
-create table T_BD_customerpossession 
+create table T_BD_customerpossession
 (
    fid                  varchar(50)                    not null,
    fcustomerid          varchar(50)                    not null,
@@ -356,20 +356,20 @@ create table T_BD_customerpossession
    constraint PK_T_BD_CUSTOMERPOSSESSION primary key (fid)
 );
 
-comment on table T_BD_customerpossession is 
-'¹Ë¿Í²Æ²ú';
+comment on table T_BD_customerpossession is
+'é¡¾å®¢è´¢äº§';
 
-comment on column T_BD_customerpossession.fid is 
+comment on column T_BD_customerpossession.fid is
 'uuid';
 
-comment on column T_BD_customerpossession.fcustomerid is 
-'¹Ë¿Íid';
+comment on column T_BD_customerpossession.fcustomerid is
+'é¡¾å®¢id';
 
-comment on column T_BD_customerpossession.fpossessionid is 
-'²Æ²úid';
+comment on column T_BD_customerpossession.fpossessionid is
+'è´¢äº§id';
 
-comment on column T_BD_customerpossession.fnum is 
-'ÊıÁ¿';
+comment on column T_BD_customerpossession.fnum is
+'æ•°é‡';
 
 /*==============================================================*/
 /* Index: T_BD_customerpossession_PK                            */
@@ -381,7 +381,7 @@ fid ASC
 /*==============================================================*/
 /* Table: T_BD_possession                                       */
 /*==============================================================*/
-create table T_BD_possession 
+create table T_BD_possession
 (
    fid                  varchar(50)                    not null,
    fname                varchar(100)                   not null,
@@ -390,20 +390,20 @@ create table T_BD_possession
    constraint PK_T_BD_POSSESSION primary key (fid)
 );
 
-comment on table T_BD_possession is 
-'²Æ²ú';
+comment on table T_BD_possession is
+'è´¢äº§';
 
-comment on column T_BD_possession.fid is 
+comment on column T_BD_possession.fid is
 'uuid';
 
-comment on column T_BD_possession.fname is 
-'²Æ²úÃû';
+comment on column T_BD_possession.fname is
+'è´¢äº§å';
 
-comment on column T_BD_possession.fnumber is 
-'²Æ²ú±àÂë';
+comment on column T_BD_possession.fnumber is
+'è´¢äº§ç¼–ç ';
 
-comment on column T_BD_possession.fstatus is 
-'×´Ì¬';
+comment on column T_BD_possession.fstatus is
+'çŠ¶æ€';
 
 /*==============================================================*/
 /* Index: T_BD_possession_PK                                    */
@@ -415,7 +415,7 @@ fid ASC
 /*==============================================================*/
 /* Table: T_BD_product                                          */
 /*==============================================================*/
-create table T_BD_product 
+create table T_BD_product
 (
    fid                  varchar(50)                    not null,
    fname                varchar(100)                   not null,
@@ -423,17 +423,17 @@ create table T_BD_product
    constraint PK_T_BD_PRODUCT primary key (fid)
 );
 
-comment on table T_BD_product is 
-'ÉÌÆ·';
+comment on table T_BD_product is
+'å•†å“';
 
-comment on column T_BD_product.fid is 
+comment on column T_BD_product.fid is
 'uuid';
 
-comment on column T_BD_product.fname is 
-'ÉÌÆ·Ãû³Æ';
+comment on column T_BD_product.fname is
+'å•†å“åç§°';
 
-comment on column T_BD_product.fnumber is 
-'ÉÌÆ·±àÂë';
+comment on column T_BD_product.fnumber is
+'å•†å“ç¼–ç ';
 
 /*==============================================================*/
 /* Index: T_BD_product_PK                                       */
@@ -445,7 +445,7 @@ fid ASC
 /*==============================================================*/
 /* Table: T_BD_shop                                             */
 /*==============================================================*/
-create table T_BD_shop 
+create table T_BD_shop
 (
    fid                  varchar(50)                    not null,
    fname                varchar(100)                   not null,
@@ -469,65 +469,65 @@ create table T_BD_shop
    constraint PK_T_BD_SHOP primary key (fid)
 );
 
-comment on table T_BD_shop is 
-'µêÆÌ,¾ßÌåµÄÒ»¸ö¸öÉÌ¼Ò';
+comment on table T_BD_shop is
+'åº—é“º,å…·ä½“çš„ä¸€ä¸ªä¸ªå•†å®¶';
 
-comment on column T_BD_shop.fid is 
+comment on column T_BD_shop.fid is
 'uuid';
 
-comment on column T_BD_shop.fname is 
-'µêÆÌÃû³Æ';
+comment on column T_BD_shop.fname is
+'åº—é“ºåç§°';
 
-comment on column T_BD_shop.fnumber is 
-'µêÆÌ±àÂë';
+comment on column T_BD_shop.fnumber is
+'åº—é“ºç¼–ç ';
 
-comment on column T_BD_shop.fparentid is 
-'ÉÏ¼¶µêÆÌ';
+comment on column T_BD_shop.fparentid is
+'ä¸Šçº§åº—é“º';
 
-comment on column T_BD_shop.ftaxnumber is 
-'Ë°ÎñµÇ¼ÇºÅ';
+comment on column T_BD_shop.ftaxnumber is
+'ç¨åŠ¡ç™»è®°å·';
 
-comment on column T_BD_shop.fisgroup is 
-'ÊÇ·ñÎª¼¯ÍÅ¹«Ë¾';
+comment on column T_BD_shop.fisgroup is
+'æ˜¯å¦ä¸ºé›†å›¢å…¬å¸';
 
-comment on column T_BD_shop.faccountbank is 
-'ÒøĞĞÕËºÅ';
+comment on column T_BD_shop.faccountbank is
+'é“¶è¡Œè´¦å·';
 
-comment on column T_BD_shop.faccountperiodtype is 
-'»á¼ÆÆÚ¼äÀàĞÍ';
+comment on column T_BD_shop.faccountperiodtype is
+'ä¼šè®¡æœŸé—´ç±»å‹';
 
-comment on column T_BD_shop.fjuridicalperson is 
-'·¨ÈË´ú±í';
+comment on column T_BD_shop.fjuridicalperson is
+'æ³•äººä»£è¡¨';
 
-comment on column T_BD_shop.faddress is 
-'µØÖ·';
+comment on column T_BD_shop.faddress is
+'åœ°å€';
 
-comment on column T_BD_shop.fregisteredcapital is 
-'×¢²á×Ê±¾';
+comment on column T_BD_shop.fregisteredcapital is
+'æ³¨å†Œèµ„æœ¬';
 
-comment on column T_BD_shop.fsetupdate is 
-'³ÉÁ¢ÈÕÆÚ';
+comment on column T_BD_shop.fsetupdate is
+'æˆç«‹æ—¥æœŸ';
 
-comment on column T_BD_shop.fendupdate is 
-'ÓªÒµÓĞĞ§ÆÚ';
+comment on column T_BD_shop.fendupdate is
+'è¥ä¸šæœ‰æ•ˆæœŸ';
 
-comment on column T_BD_shop.fregisteredcode is 
-'×¢²áµÇ¼ÇºÅ';
+comment on column T_BD_shop.fregisteredcode is
+'æ³¨å†Œç™»è®°å·';
 
-comment on column T_BD_shop.fdescription is 
-'ÃèÊö';
+comment on column T_BD_shop.fdescription is
+'æè¿°';
 
-comment on column T_BD_shop.fcreator is 
-'´´½¨Õß';
+comment on column T_BD_shop.fcreator is
+'åˆ›å»ºè€…';
 
-comment on column T_BD_shop.fcreatetime is 
-'´´½¨Ê±¼ä';
+comment on column T_BD_shop.fcreatetime is
+'åˆ›å»ºæ—¶é—´';
 
-comment on column T_BD_shop.flastupdateuser is 
-'×îºó¸üĞÂÈË';
+comment on column T_BD_shop.flastupdateuser is
+'æœ€åæ›´æ–°äºº';
 
-comment on column T_BD_shop.flastupdatetime is 
-'×îºó¸üĞÂÊ±¼ä';
+comment on column T_BD_shop.flastupdatetime is
+'æœ€åæ›´æ–°æ—¶é—´';
 
 /*==============================================================*/
 /* Index: T_BD_shop_PK                                          */
@@ -539,7 +539,7 @@ fid ASC
 /*==============================================================*/
 /* Table: T_BD_supplier                                         */
 /*==============================================================*/
-create table T_BD_supplier 
+create table T_BD_supplier
 (
    fid                  varchar(50)                    not null,
    fname                varchar(100)                   not null,
@@ -547,17 +547,17 @@ create table T_BD_supplier
    constraint PK_T_BD_SUPPLIER primary key (fid)
 );
 
-comment on table T_BD_supplier is 
-'¹©Ó¦ÉÌ';
+comment on table T_BD_supplier is
+'ä¾›åº”å•†';
 
-comment on column T_BD_supplier.fid is 
+comment on column T_BD_supplier.fid is
 'id';
 
-comment on column T_BD_supplier.fname is 
-'¹©Ó¦ÉÌÃû³Æ';
+comment on column T_BD_supplier.fname is
+'ä¾›åº”å•†åç§°';
 
-comment on column T_BD_supplier.fnumber is 
-'¹©Ó¦ÉÌ±àÂë';
+comment on column T_BD_supplier.fnumber is
+'ä¾›åº”å•†ç¼–ç ';
 
 /*==============================================================*/
 /* Index: T_BD_supplier_PK                                      */
@@ -569,7 +569,7 @@ fid ASC
 /*==============================================================*/
 /* Table: T_BD_supplierproduct                                  */
 /*==============================================================*/
-create table T_BD_supplierproduct 
+create table T_BD_supplierproduct
 (
    fid                  char(10)                       not null,
    fsupplierid          char(10)                       not null,
@@ -579,23 +579,23 @@ create table T_BD_supplierproduct
    constraint PK_T_BD_SUPPLIERPRODUCT primary key (fid)
 );
 
-comment on table T_BD_supplierproduct is 
-'¹©Ó¦ÉÌÓµÓĞµÄÉÌÆ·';
+comment on table T_BD_supplierproduct is
+'ä¾›åº”å•†æ‹¥æœ‰çš„å•†å“';
 
-comment on column T_BD_supplierproduct.fid is 
+comment on column T_BD_supplierproduct.fid is
 'uuid';
 
-comment on column T_BD_supplierproduct.fsupplierid is 
-'¹©Ó¦ÉÌid';
+comment on column T_BD_supplierproduct.fsupplierid is
+'ä¾›åº”å•†id';
 
-comment on column T_BD_supplierproduct.fproductid is 
-'²úÆ·id';
+comment on column T_BD_supplierproduct.fproductid is
+'äº§å“id';
 
-comment on column T_BD_supplierproduct.fnum is 
-'ÊıÁ¿';
+comment on column T_BD_supplierproduct.fnum is
+'æ•°é‡';
 
-comment on column T_BD_supplierproduct.fprice is 
-'¼Û¸ñ';
+comment on column T_BD_supplierproduct.fprice is
+'ä»·æ ¼';
 
 /*==============================================================*/
 /* Index: T_BD_supplierproduct_PK                               */

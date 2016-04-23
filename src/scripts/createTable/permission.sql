@@ -48,52 +48,52 @@ create table fuser
 );
 
 comment on table fuser is 
-'ÓÃ»§±í';
+'ç”¨æˆ·è¡¨';
 
-comment on column fuser.fid is 
+comment on column fuser.fid is
 'uuid';
 
-comment on column fuser.fname is 
-'ÓÃ»§Ãû³Æ';
+comment on column fuser.fname is
+'ç”¨æˆ·åç§°';
 
-comment on column fuser.fnumber is 
-'ÓÃ»§±àÂë';
+comment on column fuser.fnumber is
+'ç”¨æˆ·ç¼–ç ';
 
-comment on column fuser.ftype is 
-'ÓÃ»§ÀàĞÍ';
+comment on column fuser.ftype is
+'ç”¨æˆ·ç±»å‹';
 
-comment on column fuser.fpassword is 
-'ÃÜÂë';
+comment on column fuser.fpassword is
+'å¯†ç ';
 
-comment on column fuser.fisLocked is 
-'ÊÇ·ñËø';
+comment on column fuser.fisLocked is
+'æ˜¯å¦é”';
 
-comment on column fuser.fisforbidden is 
-'ÊÇ·ñ½ûÓÃ';
+comment on column fuser.fisforbidden is
+'æ˜¯å¦ç¦ç”¨';
 
-comment on column fuser.ferrCount is 
-'µÇÂ½´íÎó´ÎÊı';
+comment on column fuser.ferrCount is
+'ç™»é™†é”™è¯¯æ¬¡æ•°';
 
-comment on column fuser.fstaff is 
-'Ö°Ô±';
+comment on column fuser.fstaff is
+'èŒå‘˜';
 
-comment on column fuser.flockedtime is 
-'ÓÃ»§Ëø¶¨Ê±¼ä';
+comment on column fuser.flockedtime is
+'ç”¨æˆ·é”å®šæ—¶é—´';
 
-comment on column fuser.fdescription is 
-'ÃèÊö';
+comment on column fuser.fdescription is
+'æè¿°';
 
-comment on column fuser.fcreator is 
-'´´½¨Õß';
+comment on column fuser.fcreator is
+'åˆ›å»ºè€…';
 
-comment on column fuser.fcreattime is 
-'´´½¨Ê±¼ä';
+comment on column fuser.fcreattime is
+'åˆ›å»ºæ—¶é—´';
 
-comment on column fuser.flastupdateuser is 
-'×îºóĞŞ¸ÄÈË';
+comment on column fuser.flastupdateuser is
+'æœ€åä¿®æ”¹äºº';
 
-comment on column fuser.flastupdatetime is 
-'×îºóĞŞ¸ÄÊ±¼ä';
+comment on column fuser.flastupdatetime is
+'æœ€åä¿®æ”¹æ—¶é—´';
 
 /*==============================================================*/
 /* Index: fuser_PK                                              */
@@ -105,7 +105,7 @@ fid ASC
 /*==============================================================*/
 /* Table: permitem                                              */
 /*==============================================================*/
-create table permitem 
+create table permitem
 (
    fid                  varchar(50)                    not null,
    fname                varchar(100)                   not null,
@@ -118,32 +118,32 @@ create table permitem
    constraint PK_PERMITEM primary key (fid)
 );
 
-comment on table permitem is 
-'È¨ÏŞÏî';
+comment on table permitem is
+'æƒé™é¡¹';
 
-comment on column permitem.fid is 
+comment on column permitem.fid is
 'uuid';
 
-comment on column permitem.fname is 
-'È¨ÏŞÃû³Æ';
+comment on column permitem.fname is
+'æƒé™åç§°';
 
-comment on column permitem.fnumber is 
-'È¨ÏŞ±àÂë';
+comment on column permitem.fnumber is
+'æƒé™ç¼–ç ';
 
-comment on column permitem.fui is 
-'¶ÔÓ¦UI';
+comment on column permitem.fui is
+'å¯¹åº”UI';
 
-comment on column permitem.flongnumber is 
-'³¤±àÂë';
+comment on column permitem.flongnumber is
+'é•¿ç¼–ç ';
 
-comment on column permitem.fparentid is 
-'¸¸½Úµã';
+comment on column permitem.fparentid is
+'çˆ¶èŠ‚ç‚¹';
 
-comment on column permitem.fisleaf is 
-'ÊÇ·ñÒ¶×Ó';
+comment on column permitem.fisleaf is
+'æ˜¯å¦å¶å­';
 
-comment on column permitem.fdescription is 
-'ÃèÊö';
+comment on column permitem.fdescription is
+'æè¿°';
 
 /*==============================================================*/
 /* Index: permitem_PK                                           */
@@ -155,7 +155,7 @@ fid ASC
 /*==============================================================*/
 /* Table: role                                                  */
 /*==============================================================*/
-create table role 
+create table role
 (
    fid                  varchar(50)                    not null,
    fname                varchar(100)                   not null,
@@ -169,35 +169,35 @@ create table role
    constraint PK_ROLE primary key (fid)
 );
 
-comment on table role is 
-'½ÇÉ«';
+comment on table role is
+'è§’è‰²';
 
-comment on column role.fid is 
+comment on column role.fid is
 'uuid';
 
-comment on column role.fname is 
-'½ÇÉ«Ãû³Æ';
+comment on column role.fname is
+'è§’è‰²åç§°';
 
-comment on column role.fnumber is 
-'½ÇÉ«±àÂë';
+comment on column role.fnumber is
+'è§’è‰²ç¼–ç ';
 
-comment on column role.fshopid is 
-'ËùÊôµêÆÌ';
+comment on column role.fshopid is
+'æ‰€å±åº—é“º';
 
-comment on column role.fdescription is 
-'ÃèÊö';
+comment on column role.fdescription is
+'æè¿°';
 
-comment on column role.fcreator is 
-'´´½¨ÈË';
+comment on column role.fcreator is
+'åˆ›å»ºäºº';
 
-comment on column role.fcreatetime is 
-'´´½¨Ê±¼ä';
+comment on column role.fcreatetime is
+'åˆ›å»ºæ—¶é—´';
 
-comment on column role.flastupdateuser is 
-'×îºó¸üĞÂÈË';
+comment on column role.flastupdateuser is
+'æœ€åæ›´æ–°äºº';
 
-comment on column role.flastupdatetime is 
-'×îºó¸üĞÂÊ±¼ä';
+comment on column role.flastupdatetime is
+'æœ€åæ›´æ–°æ—¶é—´';
 
 /*==============================================================*/
 /* Index: role_PK                                               */
@@ -209,7 +209,7 @@ fid ASC
 /*==============================================================*/
 /* Table: roleperm                                              */
 /*==============================================================*/
-create table roleperm 
+create table roleperm
 (
    fid                  varchar(50)                    not null,
    froleid              varchar(50)                    not null,
@@ -219,23 +219,23 @@ create table roleperm
    constraint PK_ROLEPERM primary key (fid)
 );
 
-comment on table roleperm is 
-'½ÇÉ«È¨ÏŞ';
+comment on table roleperm is
+'è§’è‰²æƒé™';
 
-comment on column roleperm.fid is 
+comment on column roleperm.fid is
 'uuid';
 
-comment on column roleperm.froleid is 
-'½ÇÉ«';
+comment on column roleperm.froleid is
+'è§’è‰²';
 
-comment on column roleperm.fpermid is 
-'È¨ÏŞÏî';
+comment on column roleperm.fpermid is
+'æƒé™é¡¹';
 
-comment on column roleperm.fpermtype is 
-'È¨ÏŞÀàĞÍ';
+comment on column roleperm.fpermtype is
+'æƒé™ç±»å‹';
 
-comment on column roleperm.fruleexpr is 
-'¹æÔòÌõ¼ş';
+comment on column roleperm.fruleexpr is
+'è§„åˆ™æ¡ä»¶';
 
 /*==============================================================*/
 /* Index: roleperm_PK                                           */
@@ -247,7 +247,7 @@ fid ASC
 /*==============================================================*/
 /* Table: userrole                                              */
 /*==============================================================*/
-create table userrole 
+create table userrole
 (
    fid                  varchar(50)                    not null,
    froleid              varchar(50)                    not null,
@@ -255,14 +255,14 @@ create table userrole
    constraint PK_USERROLE primary key (fid)
 );
 
-comment on column userrole.fid is 
+comment on column userrole.fid is
 'uuid';
 
-comment on column userrole.froleid is 
-'½ÇÉ«';
+comment on column userrole.froleid is
+'è§’è‰²';
 
-comment on column userrole.fuserid is 
-'ÓÃ»§';
+comment on column userrole.fuserid is
+'ç”¨æˆ·';
 
 /*==============================================================*/
 /* Index: userrole_PK                                           */
